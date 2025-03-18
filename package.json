@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "tailwindcss build src/styles.css -o dist/styles.css"
+    "build": "tailwindcss -i ./main.css -o ./tailslim.css --watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
