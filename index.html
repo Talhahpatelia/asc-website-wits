@@ -71,44 +71,43 @@ We bridge the gap between theory and practice, equipping students with real-worl
 
         
         
-          <div class="mt-12 mb-16">
+<div class="flex justify-center">
+  <div class="m-1 p-4 w-96 rounded-2xl shadow-lg border border-gray-600 text-center bg-white bg-opacity-90 text-black">
+    <div id="countdown" class="text-3xl font-bold"></div>
+  </div>
+</div>
+
+<script>
+  function startCountdown() {
+    const targetDate = new Date("April 30, 2025 00:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      if (timeLeft <= 0) {
+        countdownElement.innerHTML = "Time's up!";
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      setTimeout(updateCountdown, 1000);
+    }
+
+    updateCountdown();
+  }
+
+  document.addEventListener("DOMContentLoaded", startCountdown);
+</script>
+
             
-            <div class="w-max mx-auto mb-8">
-              <div
-                class="m-1 p-4 w-96 rounded-2xl shadow-lg border border-gray-600 text-center bg-white bg-opacity-90 text-black"
-              >
-                <div id="countdown" class="text-3xl font-bold"></div>
-              </div>
-            </div>
-
-            <script>
-              function startCountdown() {
-                const targetDate = new Date("April 30, 2025 00:00:00").getTime();
-                const countdownElement = document.getElementById("countdown");
-
-                function updateCountdown() {
-                  const now = new Date().getTime();
-                  const timeLeft = targetDate - now;
-
-                  if (timeLeft <= 0) {
-                    countdownElement.innerHTML = "Time's up!";
-                    return;
-                  }
-
-                  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-                  countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                  setTimeout(updateCountdown, 1000);
-                }
-
-                updateCountdown();
-              }
-
-              document.addEventListener("DOMContentLoaded", startCountdown);
-            </script><p
+            <p
   class="mt-6 sm:text-lg sm:leading-relaxed md:text-xl md:leading-relaxed text-gray-600 leading-relaxed"
   id="tagline-paragraph"
 >
@@ -119,20 +118,22 @@ We bridge the gap between theory and practice, equipping students with real-worl
         
 
         
-        <div class="flex flex-col sm:flex-row mt-12 justify-center space-y-6 sm:space-y-0 sm:space-x-8">
-          
-            <div class="mb-6 sm:mb-0"><a
-  class="button button-primary rounded-lg text-2xl md:text-3xl  px-4 md:px-5 py-3 md:py-4 bg-blue-400 hover:bg-blue-500 md:text-lg md:leading-tight text-white font-semibold leading-tight shadow-md"
-  href="https://www.backabuddy.co.za/campaign/iamalsotom"
-  id="button-cta"
-  target="_blank"
->
-  ❤️ Donate
-</a>
+<div class="flex flex-col sm:flex-row mt-12 justify-center sm:space-x-8">
+  <div class="mb-6 sm:mb-0 flex justify-center w-full">
+      <a
+          class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-400 hover:bg-blue-500 md:text-lg md:leading-tight text-white font-semibold leading-tight shadow-md"
+          href="https://www.backabuddy.co.za/campaign/iamalsotom"
+          id="button-cta"
+          target="_blank"
+      >
+          ❤️ Donate
+      </a>
+  </div>
 </div>
-          
-          
-        </div>
+
+
+
+
       </div>
 
       
