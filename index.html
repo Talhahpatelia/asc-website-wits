@@ -85,8 +85,44 @@ We bridge the gap between theory and practice, equipping students with real-worl
   document.addEventListener("DOMContentLoaded", startCountdown);
 </script>
 
-
 <body>
+  <div class="sidebar-toggle" id="sidebar-toggle">
+    <i class="fa fa-bars"></i> <!-- Example: Hamburger Icon -->
+  </div>
+
+  <!-- Sidebar (Initially hidden) -->
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <a href="#who-is-wits-hpc">Who is Wits HPC?</a>
+      <a href="#what-is-asc">What is ASC?</a>
+      <a href="#meet-the-team">Meet the Team</a>
+      <a href="#the-journey">The Journey</a>
+      <a href="#why-sponsor-us">Why Sponsor Us?</a>
+      <a href="#backabuddy">Backabuddy</a>
+      <a href="#social-media">See More</a>
+    </div>
+  </div>
+
+  <script>
+    // Get all the sidebar links and sidebar toggle button
+    const sidebarLinks = document.querySelectorAll('.sidebar-content a');
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+
+    // Function to toggle the sidebar open/close
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+
+    // Close sidebar when a link is clicked
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+      });
+    });
+
+  </script>
+
   <header id="header" class="bg-cover bg-center bg-no-repeat pb-20"
     style="background-image: url('images/great_hall_green.jpg');">
 
@@ -306,6 +342,7 @@ We bridge the gap between theory and practice, equipping students with real-worl
                     (hopefully with your help!)</li>
                 </ul>
 
+
                 <div class="flex items-center justify-center space-x-6 mb-6">
                   <!-- Left Image -->
                   <img src="images/chpc_2024.jpg" class="w-1/4 h-auto object-cover shadow-lg rounded-lg">
@@ -319,13 +356,20 @@ We bridge the gap between theory and practice, equipping students with real-worl
                 <p style="text-align: center; font-style: italic; margin-top: -3em; margin-bottom: 0em;">Wits
                   University's Success at Local and International Student Cluster Competitions</p>
 
+                <p>The team will be raising funds through Backabuddy, a crowdfunding platform based in Africa. Upon
+                  completion, the payments will be managed by an attorney on a pro bono basis.</p>
+
+                <iframe id="backabuddy" src="https://www.backabuddy.co.za/campaign/iamalsotom" width="100%" height="700"
+                  style="border: none;"></iframe>
+
+
                 <p>In return for your support, we’re eager to share our experience with you:
                 <table class="w-full border-collapse border border-gray-500 rounded-lg overflow-hidden">
                   <thead>
-                    <tr class="bg-gray-200">
+                    <tr class="bg-blue-600">
                       <th class="border border-gray-500 px-6 py-3 text-left rounded-tl-lg text-center">Donation Amount
                       </th>
-                      <th class="border border-gray-500 px-4 py-3 text-left rounded-tr-lg">Sharing Our Expierence with
+                      <th class="border border-gray-500 px-4 py-3 text-left rounded-tr-lg">Sharing Our Experience with
                         You</th>
                     </tr>
                   </thead>
