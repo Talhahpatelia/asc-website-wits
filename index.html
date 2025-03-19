@@ -56,94 +56,78 @@ We bridge the gap between theory and practice, equipping students with real-worl
 
 </head>
 
+<script>
+  function startCountdown() {
+    const targetDate = new Date("April 30, 2025 00:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      if (timeLeft <= 0) {
+        countdownElement.innerHTML = "Time's up!";
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      setTimeout(updateCountdown, 1000);
+    }
+
+    updateCountdown();
+  }
+
+  document.addEventListener("DOMContentLoaded", startCountdown);
+</script>
+
+
 <body>
-  <header id="header" class="bg-cover bg-center bg-no-repeat"
+  <header id="header" class="bg-cover bg-center bg-no-repeat pb-20"
     style="background-image: url('images/great_hall_green.jpg');">
-    <div id="header-inner-wrapper" class="bg-gray-100 bg-opacity-0 pt-32 lg:pt-10">
-      <div class="w-full max-w-screen-xl relative mx-auto px-6 pt-20 pb-48 md:pb-32">
-        <div class="text-center sm:max-w-2xl max-w-3xl mx-auto text-white">
 
+    <div class="w-full max-w-screen-xl relative mx-auto px-6 pt-20 pb-10 md:pb-24">
 
-
-          <div class="mb-10 text-3xl">
-            <h1 id="brand-headline"
-              class="leading-tight text-5xl text-white font-bold text-black tracking-tight sm:text-4xl sm:leading-tight md:text-7xl md:leading-tight font-ultra">
-              WITS HPC
-            </h1>
-            <h1 id="brand-headline"
-              class="leading-tight text-5xl text-white font-bold text-black tracking-tight sm:text-4xl sm:leading-tight md:text-7xl md:leading-tight font-ultra">
-              @ ASC25
-            </h1>
-          </div>
-
-
-
-
-          <div class="flex justify-center">
-            <div
-              class="m-1 p-4 w-96 rounded-2xl custom-shadow border border-gray-600 text-center bg-white bg-opacity-90 text-black">
-              <div id="countdown" class="text-3xl font-bold"></div>
-            </div>
-          </div>
-
-          <script>
-            function startCountdown() {
-              const targetDate = new Date("April 30, 2025 00:00:00").getTime();
-              const countdownElement = document.getElementById("countdown");
-
-              function updateCountdown() {
-                const now = new Date().getTime();
-                const timeLeft = targetDate - now;
-
-                if (timeLeft <= 0) {
-                  countdownElement.innerHTML = "Time's up!";
-                  return;
-                }
-
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-                setTimeout(updateCountdown, 1000);
-              }
-
-              updateCountdown();
-            }
-
-            document.addEventListener("DOMContentLoaded", startCountdown);
-          </script>
-
-
-          <p class="mt-6 sm:text-lg sm:leading-relaxed md:text-xl md:leading-relaxed text-gray-600 leading-relaxed"
-            id="tagline-paragraph">
-
-
-          </p>
+      <div class="text-center sm:max-w-2xl max-w-3xl mx-auto text-white">
+        <!-- Heading Section -->
+        <div class="mb-10 text-3xl">
+          <h1 id="brand-headline"
+            class="leading-tight text-5xl text-white font-bold tracking-tight sm:text-4xl sm:leading-tight md:text-7xl md:leading-tight font-ultra">
+            WITS HPC
+          </h1>
+          <h1 id="brand-headline"
+            class="leading-tight text-5xl text-white font-bold tracking-tight sm:text-4xl sm:leading-tight md:text-7xl md:leading-tight font-ultra">
+            @ ASC25
+          </h1>
         </div>
-
-
-
-        <div class="flex flex-col sm:flex-row mt-12 justify-center sm:space-x-8">
-          <div class="mb-6 sm:mb-0 flex justify-center w-full">
-            <a class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-800 hover:bg-blue-900 md:text-lg md:leading-tight text-white font-semibold leading-tight custom-shadow"
-              href="https://www.backabuddy.co.za/campaign/iamalsotom" id="button-cta" target="_blank">
-              Sponsor Us
-            </a>
-          </div>
-        </div>
-
-
-
-
       </div>
 
+      <!-- Countdown Timer Section -->
+      <div class="text-center sm:max-w-2xl max-w-3xl mx-auto text-white">
+        <div class="flex justify-center mb-10">
+          <div
+            class="m-1 p-4 w-96 rounded-2xl custom-shadow border border-gray-600 text-center bg-white bg-opacity-90 text-black">
+            <div id="countdown" class="text-3xl font-bold"></div>
+          </div>
+        </div>
+      </div>
 
-
-    </div>
+      <!-- Button Section -->
+      <div class="flex flex-col sm:flex-row mt-12 justify-center sm:space-x-8 mb-10">
+        <div class="mb-6 sm:mb-0 flex justify-center w-full">
+          <a class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-800 hover:bg-blue-900 md:text-lg md:leading-tight text-white font-semibold leading-tight custom-shadow"
+            href="https://www.backabuddy.co.za/campaign/iamalsotom" id="button-cta" target="_blank">
+            Sponsor Us
+          </a>
+        </div>
+      </div>
     </div>
   </header>
+
   <main id="main" class="w-full max-w-screen-xl mx-auto">
     <div class="px-6">
       <div id="content-wrapper" class="min-h-screen w-full sm:max-w-2xl max-w-3xl mx-auto">
@@ -152,23 +136,50 @@ We bridge the gap between theory and practice, equipping students with real-worl
             <div class="pb-16 w-full pt-12">
               <div class="homepage-content prose w-full max-w-3xl mx-auto mb-6">
                 <h1 id="who-is-wits-hpc">Who is Wits HPC?</h1>
-                <p>Wits HPC is a special interest group based at the University of the Witwatersrand in Johannesburg,
-                  South Africa, dedicated to educating students on the fundamentals of High-Performance Computing (HPC)
-                  and fostering a community of future HPC experts.</p>
-                <p><img src="images/great_hall.jpg" alt="Prototype Work"> </p>
-                <p>We bridge the gap between theory and practice, equipping students with real-world HPC experience.
-                  Through weekly talks, hands-on hackathons, and technical training sessions, we prepare students for
-                  competitive rounds hosted by the Centre for High-Performance Computing (CHPC) and have recently
-                  expanded into international competitions.</p>
-                <p>At our core, we are a passionate group of engineering and computer science students working alongside
-                  lecturers to provide learning opportunities beyond the traditional curriculum. Whether mentoring,
-                  researching, competing, or innovating, Wits HPC is committed to pushing the boundaries of HPC
-                  education and excellence.</p>
+
+                <p class="mb-6">
+                  <b>Wits HPC</b> is a special interest group based at the <b>University of the Witwatersrand
+                  </b> in <b>Johannesburg,
+                    South Africa</b>,
+                  dedicated to educating students on the fundamentals of High-Performance Computing (HPC) and fostering
+                  a
+                  community of future HPC experts.
+                </p>
+
+                <img src="images/great_hall.jpg" alt="Prototype Work" class="w-full h-auto mb-6 shadow-lg rounded-lg">
+
+                <p class="mb-6">
+                  We bridge the gap between theory and practice, equipping students with real-world HPC experience.
+                  Through weekly
+                  talks, hands-on hackathons, and technical training sessions, we prepare students for competitive
+                  rounds hosted by
+                  the Centre for High-Performance Computing (CHPC) and have recently expanded into international
+                  competitions.
+                </p>
+
+                <div class="flex items-center justify-center space-x-6 mb-6">
+                  <!-- Left Image -->
+                  <img src="images/talks_1.jpg" alt="Left Image" class="w-1/2 h-auto object-cover shadow-lg rounded-lg">
+
+                  <!-- Right Image -->
+                  <img src="images/talks_2.jpg" alt="Right Image"
+                    class="w-1/2 h-auto object-cover shadow-lg rounded-lg">
+                </div>
+
+                <p class="mb-6">
+                  At our core, we are a passionate group of engineering and computer science students working alongside
+                  lecturers
+                  to provide learning opportunities beyond the traditional curriculum. Whether mentoring, researching,
+                  competing,
+                  or innovating, Wits HPC is committed to pushing the boundaries of HPC education and excellence.
+                </p>
 
                 <hr>
                 <h1 id="what-is-asc">What is ASC?</h1>
-                <p>The world&rsquo;s largest supercomputing competition, the Asia Supercomputer Community (ASC) Student
-                  Supercomputer Challenge, was proposed, and is organised by China (in cooperation with experts and
+                <p>The world&rsquo;s largest supercomputing competition, the <b>Asia Supercomputer Community (ASC)
+                    Student
+                    Supercomputer Challenge</b>, was proposed, and is organised by China (in cooperation with experts
+                  and
                   institutions from Japan, Russa, South Korea, Singapore, Taiwan, Hong Kong, and others). It began in
                   2012, with 27 universities, and has grown quickly since. Up until this year, a cumulative 10 000+
                   undergraduate students from 350+ universities have taken part. The competition itself puts students in
@@ -182,9 +193,27 @@ We bridge the gap between theory and practice, equipping students with real-worl
                   inference optimisation, Cern&rsquo;s <a href="https://geant4.web.cern.ch/">Geant4</a>, and the
                   development of a RNA m5C site detection pipeline are on the table!</p>
                 <p>The competition consists of 2 stages; the preliminary stage (which is online, from each team&rsquo;s
-                  respective home university), and the final round. WitsHPC is proud to say we were among the top 25
-                  teams in this stage, and have qualified to advance to the final round, which is hosted in China, this
-                  year in Xining, at Qinghai University.</p>
+                  respective home university), and the final round. Wits HPC is proud to say we were among the top 25
+                  teams in this stage, and have qualified to advance to the final round, which is hosted in <b>Xining,
+                    China</b>, this
+                  year, at <b>Qinghai University</b>.</p>
+
+                <div class="border p-4 shadow-lg rounded-lg bg-white max-w-2xl mx-auto mt-0">
+                  <h2 class="text-xl font-bold" style="margin-top: 0em; ">ASC24 Student Cluster Competition: Who Won and
+                    Why?</h2>
+                  <img src="https://www.hpcwire.com/wp-content/uploads/2024/06/Peking-win-1-x650s.png"
+                    alt="ASC24 Winners" class="w-full h-auto mb-4 rounded-lg shadow">
+                  <p class="text-gray-700 mb-4">
+                    HPCwire covers the latest results of the ASC24 Student Cluster Competition, highlighting the winners
+                    and key insights.
+                  </p>
+                  <a href="https://www.hpcwire.com/2024/06/18/asc24-student-cluster-competition-who-won-and-why/"
+                    class="bg-blue-700 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-900" target="_blank">
+                    Read More
+                  </a>
+                </div>
+
+
                 <hr>
                 <h1 id="meet-the-team">Meet the Team</h1>
                 <p>From Egoli, the City of Gold, we have Wits HPC, who have earned their place among the 25 finalists of
@@ -193,14 +222,40 @@ We bridge the gap between theory and practice, equipping students with real-worl
                   demonstrated their passion and dedication to HPC through facilitating talks, writing papers, and
                   engaging in outreach. Most of the team members have competed in other Student Cluster Competitions,
                   both locally and internationally, and are ready to showcase their skills once again.</p>
-                <p><img src="images/meet_the_team.jpg" alt="Prototype Work"> </p>
+
                 <p>Their mentor, Prof. Ling Cheng, joined Wits University in 2010 and has made significant contributions
                   to telecommunications and artificial intelligence. He has supervised over 50 postgraduate students,
                   including 11 PhDs, and served as an associate editor for three journals. His expertise will be
                   invaluable in guiding the team through this competition.</p>
+                <img src="images/meet_the_team.jpg" alt="Prototype Work"
+                  class="w-full h-auto mb-6 shadow-lg rounded-lg">
+
+                <p>The team, from left to right, is as follows:
+                <ul>
+                  <li><strong>Prof. Ling Cheng</strong> (Advisor)</li>
+                  <li><strong>Talhah Patelia</strong>, BSc (Eng) Information, YOS 3</li>
+                  <li><strong>Reinhard Jansen van Vuuren</strong>, BSc (Eng) Information, YOS 3 (Captain)</li>
+                  <li><strong>Jonathan Faller</strong>, BSc (Eng) Information, YOS 4</li>
+                  <li><strong>Sefora Kapenga</strong>, BSc Computer Science, YOS 3</li>
+                  <li><strong>Lily de Melo</strong>, BSc Computer Science, YOS 3</li>
+                </ul>
+
+                </p>
+
                 <hr>
                 <h1 id="the-journey">The Journey</h1>
                 <p><img src="images/trip.png" alt="Prototype Work"> </p>
+                <p> The team is scheduled to depart on May 7th and will compete from May <b>>8th to May 14th</b> at
+                  <b>Qinghai
+                    University</b>, recognized as one of China’s leading institutions for its state-of-the-art research
+                  in
+                  science and technology. They plan to leave the country on May 18th. The team seeks assistance in
+                  finalizing visas and plane tickets; however, all other expenses will be covered by the ASC Organisers,
+                  including accommodation during the competition, hardware, and meals.
+                </p>
+                <img src="images/qinghai_university.jpg" alt="Prototype Work"
+                  class="w-full h-auto mb-6 shadow-lg rounded-lg">
+
                 <hr>
                 <h1 id="why-sponsor-us">Why Sponsor Us?</h1>
                 <p>What other reasons do you need, besides our great South African accents and distinct personalities?
@@ -218,6 +273,59 @@ We bridge the gap between theory and practice, equipping students with real-worl
                   <li>The <strong>first standalone African university</strong> to compete at Virtual ISC'25 and ASC'25
                     (hopefully with your help!)</li>
                 </ul>
+
+                <p>In return for your support, we’re eager to share our experience with you:
+                <table class="w-full border-collapse border border-gray-500 rounded-lg overflow-hidden">
+                  <thead>
+                    <tr class="bg-gray-200">
+                      <th class="border border-gray-500 px-6 py-3 text-left rounded-tl-lg text-center">Donation Amount
+                      </th>
+                      <th class="border border-gray-500 px-4 py-3 text-left rounded-tr-lg">Rewards</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center"> R15,000 ($800)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>Personalized gratitude letter</li>
+                          <li>Signed digital photo of the team from the Great Wall</li>
+                          <li>Behind-the-scenes video of the team at ASC</li>
+                          <li>Your company logo on our hoodies and website</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center"> R10,000 ($530)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>Personalized gratitude letter</li>
+                          <li>Signed digital photo of the team from the Great Wall</li>
+                          <li>Behind-the-scenes video of the team at ASC</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center"> R5,000 ($270)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>Personalized gratitude letter</li>
+                          <li>Signed digital photo of the team from the Great Wall</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">Under R5,000 (Under $270)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>Personalized gratitude letter</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                </p>
                 <hr>
 
               </div>
@@ -239,6 +347,8 @@ We bridge the gap between theory and practice, equipping students with real-worl
           <a href="https://github.com/talhahpatelia">Designed</a>
           by
           <a href="https://www.talhahpatelia.com" title="Jan Raasch">Talhah Patelia</a>
+          and
+          <a href="https://www.linkedin.com/in/lily-de-melo-180a05257/" title="Jan Raasch">Lily de Melo</a>
         </div>
 
       </div>
