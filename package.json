@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "tailwindcss -i ./main.css -o ./tailslim.css"
+    "build": "tailwindcss -i ./main.css -o ./tailslim.css",
+    "dev": "npx tailwindcss -i ./main.css -o ./tailslim.css --watch   "
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
