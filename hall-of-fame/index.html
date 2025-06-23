@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Hall of Fame</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            min-height: 100vh;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .total-donors {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            font-size: 1.3rem;
+            backdrop-filter: blur(5px);
+            margin-bottom: 30px;
+        }
+        .leaderboard {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        tr:last-child {
+            border-bottom: none;
+        }
+        tr:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        td {
+            padding: 20px;
+            vertical-align: middle;
+        }
+        .rank {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #ffd700;
+            text-align: center;
+            width: 50px;
+        }
+        .name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .message {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        .amount {
+            text-align: right;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .trophy {
+            color: #ffd700;
+            margin-right: 10px;
+        }
+        .podium {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            gap: 20px;
+        }
+        .podium-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .podium-place {
+            width: 100px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .podium-name {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .first {
+            height: 150px;
+            background: linear-gradient(to bottom, #ffd700, #c5a600);
+            color: #333;
+        }
+        .second {
+            height: 120px;
+            background: linear-gradient(to bottom, #c0c0c0, #999);
+            margin-top: 30px;
+        }
+        .third {
+            height: 90px;
+            background: linear-gradient(to bottom, #cd7f32, #a05a1a);
+            margin-top: 60px;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            th, td {
+                padding: 15px 10px;
+            }
+            .podium {
+                flex-direction: column;
+                align-items: center;
+            }
+            .podium-step {
+                width: 80%;
+            }
+            .podium-place {
+                width: 100%;
+            }
+            .first, .second, .third {
+                margin-top: 0;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-button">⬅ Back</a>
+    
+    <div class="container">
+        <header>
+            <h1>Donation Hall of Fame</h1>
+            <div class="subtitle">Celebrating Our Generous Supporters</div>
+            <div class="total-donors">
+                <span class="trophy">🏆</span> Total Donors: <span id="totalDonors">0</span>
+            </div>
+        </header>
+
+        <div class="podium">
+            <div class="podium-step">
+                <div class="podium-place first">1st</div>
+                <div class="podium-name" id="firstPlace">-</div>
+            </div>
+            <div class="podium-step">
+                <div class="podium-place second">2nd</div>
+                <div class="podium-name" id="secondPlace">-</div>
+            </div>
+            <div class="podium-step">
+                <div class="podium-place third">3rd</div>
+                <div class="podium-name" id="thirdPlace">-</div>
+            </div>
+        </div>
+
+        <div class="leaderboard">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Donor</th>
+                        <th>Message</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="donorTable">
+                    <!-- Table content will be generated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const donations = [
+            { name: "The University of the Witwatersrand", amount: "R120,000", message: "N/A" },
+            { name: "firstaider", amount: "R30,000", message: "N/A" },
+            { name: "Hai Ah Nam", amount: "$1,000", message: "I hope I win naming rights! It will be called the Ricky Kendall in honor of the OG of student cluster competitions." },
+            { name: "Steven Nel", amount: "$500", message: "N/A" },
+            { name: "Mohammed Bangie", amount: "R8,000", message: "N/A" },
+            { name: "Dan Olds", amount: "R3,000", message: "N/A" },
+            { name: "Iqubal Mahomed", amount: "R2,000", message: "N/A" },
+            { name: "Branden", amount: "R2,000", message: "N/A" },
+        ];
+
+        // Sort donations by amount (descending)
+        donations.sort((a, b) => b.amount - a.amount);
+
+        // Update total donors count
+        document.getElementById('totalDonors').textContent = donations.length;
+
+        // Fill podium places
+        if (donations.length > 0) {
+            document.getElementById('firstPlace').textContent = donations[0].name;
+            if (donations.length > 1) {
+                document.getElementById('secondPlace').textContent = donations[1].name;
+            }
+            if (donations.length > 2) {
+                document.getElementById('thirdPlace').textContent = donations[2].name;
+            }
+        }
+
+        // Generate table rows
+        const tableBody = document.getElementById('donorTable');
+        donations.forEach((donor, index) => {
+            const row = document.createElement('tr');
+            
+            const rankCell = document.createElement('td');
+            rankCell.className = 'rank';
+            rankCell.textContent = index + 1;
+            
+            const nameCell = document.createElement('td');
+            nameCell.className = 'name';
+            nameCell.textContent = donor.name;
+            
+            const messageCell = document.createElement('td');
+            messageCell.className = 'message';
+            messageCell.textContent = donor.message;
+            
+            const amountCell = document.createElement('td');
+            amountCell.className = 'amount';
+            amountCell.textContent = donor.amount.toLocaleString();
+            
+            row.appendChild(rankCell);
+            row.appendChild(nameCell);
+            row.appendChild(messageCell);
+            row.appendChild(amountCell);
+            
+            tableBody.appendChild(row);
+        });
+    </script>
+
+</body>
+</html>
