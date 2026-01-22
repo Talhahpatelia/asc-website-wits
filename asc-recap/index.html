@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-white antialiased">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASC25 Recap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ultra&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="../main.css" rel="stylesheet" />
+  <style>
+    :root {
+      --wits-blue: #1e3a8a;
+      --wits-blue-deep: #0f1f3d;
+      --wits-blue-soft: rgba(30, 58, 138, 0.12);
+      --gold: #facc15;
+      --slate: #0f172a;
+      --slate-muted: #475569;
+      --card: #ffffff;
+      --stroke: rgba(148, 163, 184, 0.35);
+      --table-header: #1e3a8a;
+      --table-border: #6b7280;
+      --table-section: #d1d5db;
+      --shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    body {
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      color: var(--slate);
+      min-height: 100vh;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background: var(--wits-blue);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.3);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      z-index: 10;
+    }
+
+    .back-button:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+    }
+
+    .content-shell {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 32px;
+      margin-top: -48px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--stroke);
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .summary-cards {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin: 30px 0 24px;
+    }
+
+    .summary-card {
+      background: var(--card);
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--table-border);
+      box-shadow: 0 12px 22px rgba(15, 23, 42, 0.08);
+      text-align: left;
+    }
+
+    .summary-title {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--slate-muted);
+      margin-bottom: 6px;
+    }
+
+    .summary-value {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--wits-blue);
+    }
+
+    .total-donors {
+      background: #fff;
+      padding: 12px 18px;
+      border-radius: 999px;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-size: 1.05rem;
+      border: 1px solid var(--stroke);
+      margin-bottom: 30px;
+    }
+
+    .total-raised {
+      font-size: 1.05rem;
+      color: var(--slate-muted);
+      margin-bottom: 18px;
+    }
+
+    .leaderboard {
+      background: var(--card);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--table-border);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid var(--table-border);
+    }
+
+    thead {
+      background: var(--wits-blue);
+    }
+
+    th {
+      padding: 20px;
+      text-align: left;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      border-bottom: 1px solid var(--table-border);
+      border-left: none;
+      border-right: none;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover {
+      background: rgba(30, 58, 138, 0.08);
+    }
+
+    td {
+      padding: 20px;
+      vertical-align: middle;
+      border-bottom: 1px solid var(--table-border);
+      border-left: none;
+      border-right: none;
+    }
+
+    .name {
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+
+    .message {
+      font-style: italic;
+      color: var(--slate-muted);
+    }
+
+    .amount {
+      text-align: right;
+      font-weight: bold;
+      color: var(--wits-blue);
+    }
+
+    .trophy {
+      color: var(--gold);
+      margin-right: 4px;
+    }
+
+    .podium {
+      display: flex;
+      justify-content: center;
+      margin: 40px 0;
+      gap: 20px;
+    }
+
+    .podium-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .podium-place {
+      width: 100px;
+      background: rgba(30, 58, 138, 0.1);
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.5rem;
+      border: 1px solid var(--stroke);
+    }
+
+    .podium-name {
+      margin-top: 10px;
+      font-weight: bold;
+      color: var(--wits-blue-deep);
+    }
+
+    .first {
+      height: 150px;
+      background: linear-gradient(to bottom, #fde68a, #f59e0b);
+      color: #1e293b;
+    }
+
+    .second {
+      height: 120px;
+      background: linear-gradient(to bottom, #d1d5db, #9ca3af);
+      margin-top: 30px;
+    }
+
+    .third {
+      height: 90px;
+      background: linear-gradient(to bottom, #f59e0b, #b45309);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+
+      th,
+      td {
+        padding: 15px 10px;
+      }
+
+      .content-shell {
+        padding: 24px;
+        margin-top: -32px;
+      }
+
+      .podium {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .podium-step {
+        width: 80%;
+      }
+
+      .podium-place {
+        width: 100%;
+      }
+
+      .first,
+      .second,
+      .third {
+        margin-top: 0;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="w-full max-w-screen-xl mx-auto px-6 py-10">
+    <video
+      class="w-full rounded-2xl shadow-xl border border-slate-200"
+      controls
+      preload="metadata">
+      <source src="https://www.asc-events.net/StudentChallenge/ASC25/v/index1/11.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </main>
+</body>
+
+</html>
