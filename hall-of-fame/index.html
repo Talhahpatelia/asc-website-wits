@@ -1,289 +1,434 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-white antialiased">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Hall of Fame</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ultra&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="../main.css" rel="stylesheet" />
     <style>
+        :root {
+            --wits-blue: #1e3a8a;
+            --wits-blue-deep: #0f1f3d;
+            --wits-blue-soft: rgba(30, 58, 138, 0.12);
+            --gold: #facc15;
+            --slate: #0f172a;
+            --slate-muted: #475569;
+            --card: #ffffff;
+            --stroke: rgba(148, 163, 184, 0.35);
+            --table-header: #1e3a8a;
+            --table-border: #6b7280;
+            --table-section: #d1d5db;
+            --shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+        }
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background: #f8fafc;
             margin: 0;
             padding: 0;
-            color: #fff;
+            color: var(--slate);
             min-height: 100vh;
         }
+
         .back-button {
             position: absolute;
             top: 20px;
             left: 20px;
             padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
+            background: var(--wits-blue);
+            color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            backdrop-filter: blur(5px);
+            border-radius: 999px;
+            font-weight: 600;
+            box-shadow: 0 12px 24px rgba(15, 23, 42, 0.3);
             transition: all 0.3s ease;
+            border: 1px solid rgba(148, 163, 184, 0.25);
+            z-index: 10;
         }
+
         .back-button:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: #1d4ed8;
+            transform: translateY(-1px);
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
+
+        .content-shell {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 32px;
+            margin-top: -48px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--stroke);
         }
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
+
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
-            margin-bottom: 30px;
         }
+
+        .summary-cards {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin: 30px 0 24px;
+        }
+
+        .summary-card {
+            background: var(--card);
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--table-border);
+            box-shadow: 0 12px 22px rgba(15, 23, 42, 0.08);
+            text-align: left;
+        }
+
+        .summary-title {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--slate-muted);
+            margin-bottom: 6px;
+        }
+
+        .summary-value {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--wits-blue);
+        }
+
         .total-donors {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 10px;
-            display: inline-block;
-            font-size: 1.3rem;
-            backdrop-filter: blur(5px);
+            background: #fff;
+            padding: 12px 18px;
+            border-radius: 999px;
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 1.05rem;
+            border: 1px solid var(--stroke);
             margin-bottom: 30px;
         }
-        .leaderboard {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+        .total-raised {
+            font-size: 1.05rem;
+            color: var(--slate-muted);
+            margin-bottom: 18px;
         }
+
+        .leaderboard {
+            background: var(--card);
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--table-border);
+            box-shadow: var(--shadow);
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
+            border: 1px solid var(--table-border);
         }
+
         thead {
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--wits-blue);
         }
+
         th {
             padding: 20px;
             text-align: left;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: #fff;
+            border-bottom: 1px solid var(--table-border);
+            border-left: none;
+            border-right: none;
         }
-        tr {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        tr:last-child {
+
+        tr:last-child td {
             border-bottom: none;
         }
+
         tr:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(30, 58, 138, 0.08);
         }
+
         td {
             padding: 20px;
             vertical-align: middle;
+            border-bottom: 1px solid var(--table-border);
+            border-left: none;
+            border-right: none;
         }
-        .rank {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #ffd700;
-            text-align: center;
-            width: 50px;
-        }
+
         .name {
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
+
         .message {
             font-style: italic;
-            opacity: 0.9;
+            color: var(--slate-muted);
         }
+
         .amount {
             text-align: right;
             font-weight: bold;
-            color: #ffd700;
+            color: var(--wits-blue);
         }
+
         .trophy {
-            color: #ffd700;
-            margin-right: 10px;
+            color: var(--gold);
+            margin-right: 4px;
         }
+
         .podium {
             display: flex;
             justify-content: center;
             margin: 40px 0;
             gap: 20px;
         }
+
         .podium-step {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         .podium-place {
             width: 100px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(30, 58, 138, 0.1);
             border-radius: 8px 8px 0 0;
             display: flex;
             justify-content: center;
             align-items: center;
             font-weight: bold;
             font-size: 1.5rem;
+            border: 1px solid var(--stroke);
         }
+
         .podium-name {
             margin-top: 10px;
             font-weight: bold;
+            color: var(--wits-blue-deep);
         }
+
         .first {
             height: 150px;
-            background: linear-gradient(to bottom, #ffd700, #c5a600);
-            color: #333;
+            background: linear-gradient(to bottom, #fde68a, #f59e0b);
+            color: #1e293b;
         }
+
         .second {
             height: 120px;
-            background: linear-gradient(to bottom, #c0c0c0, #999);
+            background: linear-gradient(to bottom, #d1d5db, #9ca3af);
             margin-top: 30px;
         }
+
         .third {
             height: 90px;
-            background: linear-gradient(to bottom, #cd7f32, #a05a1a);
+            background: linear-gradient(to bottom, #f59e0b, #b45309);
             margin-top: 60px;
         }
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            th, td {
+
+            th,
+            td {
                 padding: 15px 10px;
             }
+
+            .content-shell {
+                padding: 24px;
+                margin-top: -32px;
+            }
+
             .podium {
                 flex-direction: column;
                 align-items: center;
             }
+
             .podium-step {
                 width: 80%;
             }
+
             .podium-place {
                 width: 100%;
             }
-            .first, .second, .third {
+
+            .first,
+            .second,
+            .third {
                 margin-top: 0;
                 height: 80px;
             }
         }
     </style>
 </head>
+
 <body>
 
     <a href="https://asc.witshpc.com" class="back-button">⬅ Back</a>
-    
-    <div class="container">
-        <header>
-            <h1>Donation Hall of Fame</h1>
-            <div class="subtitle">Celebrating Our Generous Supporters</div>
+
+    <header id="header" class="bg-cover bg-center bg-no-repeat pb-20"
+        style="background-image: url('../images/team_photo_1.jpg');">
+        <div class="w-full max-w-screen-xl relative mx-auto px-6 pt-16 pb-10">
+            <div class="text-center sm:max-w-2xl max-w-3xl mx-auto text-white">
+                <h1
+                    class="leading-tight text-4xl text-white font-bold tracking-tight sm:text-4xl sm:leading-tight md:text-6xl md:leading-tight font-ultra">
+                    ASC25 Hall of Fame
+                </h1>
+                <div class="subtitle mt-4">Celebrating Our Generous Supporters</div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="w-full max-w-screen-xl mx-auto px-6 pb-16">
+        <div class="content-shell">
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="summary-title">University of the Witwatersrand</div>
+                    <div class="summary-value" id="universityContribution">R120,000</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-title">Anonymous Donors</div>
+                    <div class="summary-value" id="anonymousContribution">R8,150</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-title">All Other Donors</div>
+                    <div class="summary-value" id="otherDonorsTotal">R96,794</div>
+                </div>
+            </div>
+            <div class="total-raised" id="totalRaised">Total Raised: R224,944</div>
             <div class="total-donors">
                 <span class="trophy">🏆</span> Total Donors: <span id="totalDonors">0</span>
             </div>
-        </header>
 
-        <div class="podium">
-            <div class="podium-step">
-                <div class="podium-place first">1st</div>
-                <div class="podium-name" id="firstPlace">-</div>
+            <div class="podium">
+                <div class="podium-step">
+                    <div class="podium-place first">1st</div>
+                    <div class="podium-name" id="firstPlace">-</div>
+                </div>
+                <div class="podium-step">
+                    <div class="podium-place second">2nd</div>
+                    <div class="podium-name" id="secondPlace">-</div>
+                </div>
+                <div class="podium-step">
+                    <div class="podium-place third">3rd</div>
+                    <div class="podium-name" id="thirdPlace">-</div>
+                </div>
             </div>
-            <div class="podium-step">
-                <div class="podium-place second">2nd</div>
-                <div class="podium-name" id="secondPlace">-</div>
-            </div>
-            <div class="podium-step">
-                <div class="podium-place third">3rd</div>
-                <div class="podium-name" id="thirdPlace">-</div>
+
+            <div class="leaderboard">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Donor</th>
+                            <th>Message</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody id="donorTable">
+                        <!-- Table content will be generated by JavaScript -->
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        <div class="leaderboard">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Donor</th>
-                        <th>Message</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody id="donorTable">
-                    <!-- Table content will be generated by JavaScript -->
-                </tbody>
-            </table>
-        </div>
-    </div>
+    </main>
 
     <script>
+        const totalRaised = "R224,944";
+        const universityContribution = "R120,000";
+        const anonymousContribution = "R8,150";
+        const otherDonorsTotal = "R96,794";
         const donations = [
-            { name: "The University of the Witwatersrand", amount: "R120,000", message: "N/A" },
             { name: "firstaider", amount: "R30,000", message: "N/A" },
             { name: "Hai Ah Nam", amount: "$1,000", message: "I hope I win naming rights! It will be called the Ricky Kendall in honor of the OG of student cluster competitions." },
-            { name: "Steven Nel", amount: "$500", message: "N/A" },
-            { name: "Mohammed Bangie", amount: "R8,000", message: "N/A" },
-            { name: "Dan Olds", amount: "R3,000", message: "N/A" },
-            { name: "Iqubal Mahomed", amount: "R2,000", message: "N/A" },
+            { name: "Steven Nell", amount: "$500", message: "N/A" },
+            { name: "Intel OneAPI", amount: "R7,888", message: "N/A" },
+            { name: "Iqubal Dawood Mahomed", amount: "R5,000", message: "Netbank Retail Banking" },
+            { name: "Dan Olds", amount: "R3,000", message: "Let's get some momentum going. Priming the pump here!" },
             { name: "Branden", amount: "R2,000", message: "N/A" },
+            { name: "HPC Gelato Group", amount: "R2,000", message: "N/A" },
+            { name: "Shaah", amount: "R2,000", message: "N/A" },
+            { name: "FALLER TRADING ONE CC", amount: "R1,000", message: "Wishing you lots of success in the competition!" },
+            { name: "Fallereños", amount: "R1,000", message: "Good luck Jono" },
+            { name: "Gaylard family", amount: "R1,000", message: "N/A" },
+            { name: "M Themelis", amount: "R1,000", message: "Go Team! Proud of you all" },
+            { name: "Terry Ferreira", amount: "R500", message: "N/A" },
+            { name: "DV James", amount: "R500", message: "Netbank Retail Banking" },
+            { name: "Sayfullah", amount: "R500", message: "Make us proud <3" },
+            { name: "Cristin", amount: "R500", message: "Good luck!!!" },
+            { name: "Dean Solomon", amount: "R500", message: "N/A" },
+            { name: "Betty", amount: "R500", message: "Good Luck, Lily. Soar like an eagle." },
+            { name: "Brett Mansfield", amount: "R500", message: "N/A" },
+            { name: "Derick", amount: "R500", message: "Best of luck!" },
+            { name: "EdythP", amount: "R200", message: "N/A" },
+            { name: "Nidal", amount: "R200", message: "To infinity and beyond" },
+            { name: "Sharda Krishna", amount: "$150", message: "Good Luck team!" },
+            { name: "Nicholas Nell", amount: "$100", message: "N/A" },
+            { name: "Brent Gorda", amount: "$100", message: "Go team - best of luck in the competition" },
+            { name: "Steve Conway", amount: "R100", message: "N/A" },
+            { name: "AJ Lauer", amount: "$60", message: "Good luck!" },
+            { name: "Ari Berman (BioTeam, LLC)", amount: "$50", message: "Best of luck to you all!" },
+            { name: "Hussein Harake", amount: "$50", message: "Good luck guys :)" },
+            { name: "Olly perks", amount: "$50", message: "Good luck" },
+            { name: "Henry Scott Newman", amount: "$30", message: "N/A" },
         ];
+        const exchangeRate = 19;
+        const parseAmountToRands = (amount) => {
+            const value = Number(amount.replace(/[^0-9.]/g, "")) || 0;
+            return amount.trim().startsWith("$") ? value * exchangeRate : value;
+        };
+        const sanitizeMessage = (message) => (message === "N/A" ? "" : message);
+        const sortedDonations = [...donations].sort((a, b) => {
+            return parseAmountToRands(b.amount) - parseAmountToRands(a.amount);
+        });
 
-        // Sort donations by amount (descending)
-        donations.sort((a, b) => b.amount - a.amount);
+        document.getElementById('universityContribution').textContent = universityContribution;
+        document.getElementById('totalRaised').textContent = `Total Raised: ${totalRaised}`;
+        document.getElementById('anonymousContribution').textContent = anonymousContribution;
+        document.getElementById('otherDonorsTotal').textContent = otherDonorsTotal;
 
-        // Update total donors count
-        document.getElementById('totalDonors').textContent = donations.length;
+        // Update total donors count (include anonymous total)
+        const totalDonors = donations.length + (anonymousContribution ? 1 : 0);
+        document.getElementById('totalDonors').textContent = totalDonors;
 
         // Fill podium places
-        if (donations.length > 0) {
-            document.getElementById('firstPlace').textContent = donations[0].name;
-            if (donations.length > 1) {
-                document.getElementById('secondPlace').textContent = donations[1].name;
+        if (sortedDonations.length > 0) {
+            document.getElementById('firstPlace').textContent = sortedDonations[0].name;
+            if (sortedDonations.length > 1) {
+                document.getElementById('secondPlace').textContent = sortedDonations[1].name;
             }
-            if (donations.length > 2) {
-                document.getElementById('thirdPlace').textContent = donations[2].name;
+            if (sortedDonations.length > 2) {
+                document.getElementById('thirdPlace').textContent = sortedDonations[2].name;
             }
         }
 
         // Generate table rows
         const tableBody = document.getElementById('donorTable');
-        donations.forEach((donor, index) => {
+        sortedDonations.forEach((donor) => {
             const row = document.createElement('tr');
-            
-            const rankCell = document.createElement('td');
-            rankCell.className = 'rank';
-            rankCell.textContent = index + 1;
-            
+
             const nameCell = document.createElement('td');
             nameCell.className = 'name';
             nameCell.textContent = donor.name;
-            
+
             const messageCell = document.createElement('td');
             messageCell.className = 'message';
-            messageCell.textContent = donor.message;
-            
+            messageCell.textContent = sanitizeMessage(donor.message);
+
             const amountCell = document.createElement('td');
             amountCell.className = 'amount';
             amountCell.textContent = donor.amount.toLocaleString();
-            
-            row.appendChild(rankCell);
+
             row.appendChild(nameCell);
             row.appendChild(messageCell);
             row.appendChild(amountCell);
-            
+
             tableBody.appendChild(row);
         });
     </script>
 
 </body>
+
 </html>
