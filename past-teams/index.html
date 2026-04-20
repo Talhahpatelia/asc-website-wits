@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="bg-white antialiased">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>WITS HPC — Past Teams</title>
+
+  <link rel="shortcut icon" href="../images/favicon.ico" />
+
+  <meta name="description" content="Past Wits HPC teams at the ASC Student Supercomputer Challenge." />
+  <link href="https://fonts.googleapis.com/css2?family=Ultra&family=Roboto+Mono&display=swap" rel="stylesheet">
+
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <meta name="viewport" content="width=device-width" />
+
+  <link href="../main.css" rel="stylesheet" />
+</head>
+
+<script>
+  function startCountdown() {
+    const targetDate = new Date("May 7, 2025 00:00:00").getTime();
+    const countdownElement = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const timeLeft = targetDate - now;
+
+      if (timeLeft <= 0) {
+        countdownElement.innerHTML = "Departed!";
+        return;
+      }
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+      setTimeout(updateCountdown, 1000);
+    }
+
+    updateCountdown();
+  }
+
+  document.addEventListener("DOMContentLoaded", startCountdown);
+</script>
+
+<body>
+  <div class="sidebar-toggle" id="sidebar-toggle">
+    <i class="fa fa-bars"></i>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <a href="../index.html">← Home</a>
+      <a href="#asc25">ASC25</a>
+      <a href="#meet-the-team">Meet the Team</a>
+      <a href="#the-journey">The Journey</a>
+      <a href="#why-sponsor-us">Sponsorship</a>
+      <a href="#backabuddy">Backabuddy</a>
+      <a href="#social-media">See More</a>
+    </div>
+  </div>
+
+  <script>
+    const sidebarLinks = document.querySelectorAll('.sidebar-content a');
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+
+    sidebarToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+      });
+    });
+  </script>
+
+  <header id="header" class="bg-cover bg-center bg-no-repeat pb-20"
+    style="background-image: url('../images/great_hall_green.jpg');">
+
+    <div class="w-full max-w-screen-xl relative mx-auto px-6 pt-20 pb-10 md:pb-24">
+
+      <!-- Back link -->
+      <div class="mb-6">
+        <a href="../index.html"
+          class="text-white opacity-80 hover:opacity-100 text-lg font-semibold"
+          style="text-decoration: none;">
+          ← Back to Wits HPC @ ASC
+        </a>
+      </div>
+
+      <div class="text-center sm:max-w-2xl max-w-3xl mx-auto text-white">
+        <div class="mb-10 text-3xl">
+          <h1 id="brand-headline"
+            class="leading-tight text-5xl text-white font-bold tracking-tight sm:text-4xl sm:leading-tight md:text-7xl md:leading-tight font-ultra">
+            WITS HPC
+          </h1>
+          <h1 id="brand-headline"
+            class="leading-tight text-5xl text-white font-bold tracking-tight sm:text-4xl sm:leading-tight md:text-7xl md:leading-tight font-ultra">
+            @ ASC25
+          </h1>
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="text-center sm:max-w-2xl max-w-3xl mx-auto text-white">
+        <div class="flex justify-center mb-10">
+          <div
+            class="m-1 p-4 w-96 rounded-2xl custom-shadow border border-gray-600 text-center bg-white bg-opacity-90 text-black">
+            <p class="text-lg mb-2"><i>Days till departure:</i></p>
+            <div id="countdown" class="text-3xl font-bold"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row mt-12 justify-center sm:space-x-8 mb-10">
+        <div class="mb-6 sm:mb-0 flex justify-center w-full gap-4">
+          <a class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-800 hover:bg-blue-900 md:text-lg md:leading-tight text-white font-semibold leading-tight custom-shadow text-center"
+            href="https://www.backabuddy.co.za/campaign/wits-hpc-asc25" target="_blank">
+            Back-A-Buddy
+          </a>
+          <a class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-800 hover:bg-blue-900 md:text-lg md:leading-tight text-white font-semibold leading-tight custom-shadow text-center"
+            href="../hall-of-fame/index.html">
+            Hall of Fame
+          </a>
+          <a class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-800 hover:bg-blue-900 md:text-lg md:leading-tight text-white font-semibold leading-tight custom-shadow text-center"
+            href="https://asc.witshpc.com/asc-recap/index.html">
+            ASC25 Recap
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="w-full max-w-screen-xl mx-auto">
+    <div class="px-6">
+      <div id="content-wrapper" class="min-h-screen w-full sm:max-w-2xl max-w-3xl mx-auto">
+        <div id="content">
+          <div class="flex">
+            <div class="pb-16 w-full pt-12">
+              <div class="homepage-content prose w-full max-w-3xl mx-auto mb-6">
+
+                <!-- ASC25 SECTION -->
+                <h1 id="asc25">ASC25 — Xining, China</h1>
+                <p>
+                  In 2025, Wits HPC made history as the <b>first standalone African university</b> to compete at the
+                  ASC Student Supercomputer Challenge. The team qualified among the
+                  <a href="https://www.asc-events.net/StudentChallenge/ASC25/preliminary-result.php">top 25 finalists</a>
+                  worldwide from the preliminary round, then travelled to <b>Qinghai University, Xining, China</b>
+                  to compete in person against the best student HPC teams on the planet.
+                </p>
+
+                <p>
+                  The competition this year featured tasks including
+                  <a href="https://deepmind.google/technologies/alphafold/">Google DeepMind's AlphaFold3</a>
+                  <a href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">(Nobel Prize 2024)</a>
+                  inference optimisation,
+                  <a href="https://www.deepseek.com/">DeepSeek-AI's DeepSeek R1</a> inference optimisation,
+                  CERN's <a href="https://geant4.web.cern.ch/">Geant4</a>, and an RNA m5C site detection pipeline —
+                  alongside the standard <a href="https://www.netlib.org/benchmark/hpl/">HPL</a> and
+                  <a href="https://hpcg-benchmark.org/">HPCG</a> benchmarks.
+                </p>
+
+                <div class="border p-4 shadow-lg rounded-lg bg-white max-w-2xl mx-auto mt-0 mb-4">
+                  <h2 class="text-xl font-bold" style="margin-top: 0em;">ASC24 Student Cluster Competition: Who Won and Why?</h2>
+                  <img src="https://www.hpcwire.com/wp-content/uploads/2024/06/Peking-win-1-x650s.png"
+                    alt="ASC24 Winners" class="w-full h-auto mb-4 rounded-lg shadow">
+                  <p class="text-gray-700 mb-4">
+                    HPCwire covers the results of the ASC24 Student Cluster Competition, highlighting the winners and key insights.
+                  </p>
+                  <a href="https://www.hpcwire.com/2024/06/18/asc24-student-cluster-competition-who-won-and-why/"
+                    class="text-white bg-blue-800 px-4 py-2 rounded-lg shadow hover:bg-blue-900" target="_blank"
+                    style="text-decoration: none; color: white;">
+                    Read More
+                  </a>
+                </div>
+
+                <hr>
+
+                <!-- MEET THE TEAM -->
+                <h1 id="meet-the-team">Meet the Team</h1>
+                <p>From Egoli, the City of Gold, we have Wits HPC, who earned
+                  <a href="https://www.asc-events.net/StudentChallenge/ASC25/preliminary-result.php">their place among
+                    the 25 ASC25 finalists</a>, standing out from hundreds of teams worldwide.
+                </p>
+                <p>The team is made up of undergraduate students from the Science and Engineering faculties who have
+                  demonstrated their passion and dedication to HPC through facilitating talks, writing papers, and
+                  engaging in outreach. Most of the team members have competed in other Student Cluster Competitions,
+                  both locally and internationally.</p>
+
+                <p>Their advisor, <b>Prof. Ling Cheng</b>, joined Wits University in 2010 and has made significant
+                  contributions to telecommunications and artificial intelligence. He has supervised over 50 postgraduate
+                  students, including 11 PhDs, and served as an associate editor for three journals.</p>
+
+                <div style="text-align: center;">
+                  <img src="../images/meet_the_team.jpg" class="w-full h-auto shadow-lg rounded-lg">
+                  <p style="font-style: italic; margin-top: -1.75em; margin-bottom: 0em;">From left to right: Lily de
+                    Melo, Sefora Kapenga, Jonathan Faller, Reinhard Jansen van Vuuren, Talhah Patelia, Prof. Ling Cheng
+                  </p>
+                </div>
+
+                <p>The team composition is as follows:
+                <ul>
+                  <li><a href="https://www.wits.ac.za/people/academic-a-z-listing/c/lingchengwitsacza/"><strong>Prof.
+                        Ling Cheng</strong></a> (Advisor)</li>
+                  <li><a href="https://www.linkedin.com/in/talhah-patelia-77250a196/"><strong>Talhah
+                        Patelia</strong></a>, BSc (Eng) Information, YOS 3</li>
+                  <li><a href="https://www.linkedin.com/in/reinhardjvv/"><strong>Reinhard Jansen van
+                        Vuuren</strong></a>, BSc (Eng) Information, YOS 3 (Captain)</li>
+                  <li><a href="https://www.linkedin.com/in/jonathan-faller-2abb191b8/"><strong>Jonathan
+                        Faller</strong></a>, BSc (Eng) Information, YOS 4</li>
+                  <li><a href="https://www.linkedin.com/in/sephora-k/"><strong>Sefora Kapenga</strong></a>, BSc Computer
+                    Science, YOS 3</li>
+                  <li><a href="https://www.linkedin.com/in/lily-de-melo-180a05257/"><strong>Lily de
+                        Melo</strong></a>, BSc Computer Science, YOS 3</li>
+                </ul>
+                </p>
+
+                <hr>
+
+                <!-- THE JOURNEY -->
+                <h1 id="the-journey">The Journey</h1>
+                <div style="text-align: center;">
+                  <img src="../images/witsasc25.png" class="w-full h-auto shadow-lg rounded-lg">
+                  <p style="font-style: italic; margin-top: -1.75em; margin-bottom: 0em;">Travel from South Africa to China</p>
+                </div>
+                <p>The team departed on <b>May 7th</b> and competed from <b>May 8th to May 14th</b> at
+                  <b>Qinghai University</b>, recognized as one of China's leading institutions for its state-of-the-art
+                  research in science and technology. They returned on May 18th.
+                </p>
+                <div style="text-align: center;">
+                  <img src="../images/qinghai_university.jpg" class="w-full h-auto shadow-lg rounded-lg">
+                  <p style="font-style: italic; margin-top: -1.75em; margin-bottom: 0em;">Qinghai University</p>
+                </div>
+
+                <hr>
+
+                <!-- WHY SPONSOR -->
+                <h1 id="why-sponsor-us">Why Sponsor Us?</h1>
+                <p>What other reasons do you need, besides our great South African accents and distinct personalities?
+                  On a more serious note, our students have worked tirelessly and shown immense passion in elevating
+                  the HPC student space in South Africa. Sponsoring Wits HPC means supporting the next generation of
+                  HPC industry professionals and investing in future talent.</p>
+                <p>By sponsoring Wits HPC, your company gains visibility and aligns itself with a proven track record of
+                  excellence in HPC &amp; AI education and performance. Over the past 10 years, we've proven our excellence:</p>
+                <ul>
+                  <li><strong>7 first-place titles</strong> at the CHPC SCC (South Africa)</li>
+                  <li><strong>4 first-place titles</strong> at the ISC SCC (Germany), with 52 out of 88 students
+                    selected for Team CHPC at ISC being from Wits HPC</li>
+                  <li>The <strong>first standalone African university</strong> to compete at ASC</li>
+                </ul>
+
+                <div class="flex items-center justify-center space-x-6 mb-6">
+                  <img src="../images/chpc_2024.jpg" class="w-1/4 h-auto object-cover shadow-lg rounded-lg">
+                  <img src="../images/isc_2016.jpg" class="w-1/4 h-auto object-cover shadow-lg rounded-lg">
+                  <img src="../images/isc_year.webp" class="w-1/4 h-auto object-cover shadow-lg rounded-lg">
+                </div>
+                <p style="text-align: center; font-style: italic; margin-top: -3em; margin-bottom: 0em;">Wits
+                  University's Success at Local and International Student Cluster Competitions</p>
+
+                <p>In return for your support, we're eager to share our experience with you:</p>
+                <table class="w-full border-collapse border border-gray-500 rounded-lg overflow-hidden">
+                  <thead>
+                    <tr class="bg-blue-900">
+                      <th class="text-white border border-gray-500 px-6 py-3 text-center rounded-tl-lg">Donation Amount</th>
+                      <th class="text-white border border-gray-500 px-4 py-3 text-left rounded-tr-lg">Sharing Our Experience with You<sup>*</sup></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="bg-gray-300">
+                      <td colspan="2" class="text-center font-bold py-2">Corporate</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R30,000 ($1,600)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>A personalized stamp featuring your name in traditional calligraphy.</li>
+                          <li>Includes all experiences from below as well</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R20,000 ($1,070)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>A Red Book, purchased in China, with a handwritten message from our team - mailed directly to you.</li>
+                          <li>Includes all experiences from below as well</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R15,000 ($800)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>Proudly display your logo or name on our Wits HPC team hoodies.</li>
+                          <li>Your logo or name featured on our official website.</li>
+                          <li>Includes all experiences from below as well</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R10,000 ($530)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>A custom-made shoutout video from us at ASC in China.</li>
+                          <li>Includes all experiences from below as well</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R5,000 ($270)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>A fun team photo with your name or company featured at ASC in China - posted on our socials.</li>
+                          <li>Includes all experiences from below as well</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-300">
+                      <td colspan="2" class="text-center font-bold py-2">Enthusiast</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R3,000 ($160)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>A postcard-style digital image of us at the Great Wall with your name on it.</li>
+                          <li>Includes all experiences from below as well</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R2,000 ($110)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>Exclusive access to our newsletter - behind-the-scenes content and early previews.</li>
+                          <li>Includes all experiences from below as well</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R1,000 ($55)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>Your name proudly displayed on our Hall of Fame canvas in the Wits HPC hardware room.</li>
+                          <li>Includes all experiences from below as well</li>
+                        </ul>
+                      </td>
+                    </tr>
+                    <tr class="bg-gray-300">
+                      <td colspan="2" class="text-center font-bold py-2">Casual</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">Under R1,000 (Under $55)</td>
+                      <td class="border border-gray-500 px-4 py-4">
+                        <ul class="pl-5">
+                          <li>Your name proudly displayed on our digital Hall of Fame on the Wits HPC website.</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p>And for our top donors:</p>
+                <table class="w-full border-collapse border border-gray-500 rounded-lg overflow-hidden mt-6">
+                  <colgroup>
+                    <col style="width: 40%;">
+                    <col style="width: 60%;">
+                  </colgroup>
+                  <thead>
+                    <tr class="bg-blue-900">
+                      <th class="text-white border border-gray-500 px-6 py-3 text-center rounded-tl-lg">Top Donor Rank</th>
+                      <th class="text-white border border-gray-500 px-6 py-3 text-left rounded-tr-lg">Sharing Our Experience with You<sup>*</sup></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">Top Donor</td>
+                      <td class="border border-gray-500 px-6 py-4">Naming Rights for Cluster</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">2nd Highest Donor</td>
+                      <td class="border border-gray-500 px-6 py-4">Naming Rights for two nodes</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">3rd Highest Donor</td>
+                      <td class="border border-gray-500 px-6 py-4">Naming Rights for one node</td>
+                    </tr>
+                    <tr>
+                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">4th Highest Donor</td>
+                      <td class="border border-gray-500 px-6 py-4">Naming Rights for one node</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p><sup>*</sup><i>All perks depend on us being able to make it to ASC. If that doesn't happen, we'll do
+                    our best to refund as much of your donation as we can — though it might not be the full amount.</i></p>
+
+                <hr>
+
+                <!-- BACKABUDDY -->
+                <h1 id="backabuddy">BackaBuddy</h1>
+                <p>The team raised funds through BackaBuddy, a crowdfunding platform based in Africa. Payments were
+                  managed by an attorney on a pro bono basis.</p>
+
+                <iframe src="https://www.backabuddy.co.za/campaign/wits-hpc-asc25" width="100%" height="700"
+                  style="border: none;"></iframe>
+
+                <hr>
+
+                <!-- SOCIAL MEDIA -->
+                <h1 id="social-media">See More</h1>
+
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+                <p>Follow our journey on social media:</p>
+                <div style="padding: 10px;">
+                  <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                    <i class="fa-brands fa-linkedin fa-2x text-blue-900"></i>
+                    <strong><a href="https://www.linkedin.com/company/wits-hpc-interest-group/" target="_blank"
+                        style="text-decoration: none; padding-left: 8px;">Wits HPC Interest Group</a></strong>
+                  </div>
+                  <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                    <i class="fa-brands fa-instagram fa-2x text-blue-900"></i>
+                    <strong><a href="https://www.instagram.com/witshpc?igsh=MWE0ZnZpbnhwazcyMw==" target="_blank"
+                        style="text-decoration: none; padding-left: 8px;">@witshpc</a></strong>
+                  </div>
+                  <div style="margin-bottom: 20px; display: flex; align-items: center;">
+                    <i class="fa-solid fa-globe fa-2x text-blue-900"></i>
+                    <strong><a href="https://witshpc.com/" target="_blank"
+                        style="text-decoration: none; padding-left: 8px;">witshpc.com</a></strong>
+                  </div>
+                </div>
+
+                <p>Our technical content:</p>
+                <div style="padding: 10px; margin-bottom: 20px; display: flex; align-items: center;">
+                  <i class="fa-brands fa-github fa-2x text-blue-900"></i>
+                  <strong><a href="https://github.com/WitsHPC/HPC-InterestGroup" target="_blank"
+                      style="text-decoration: none; padding-left: 8px;">GitHub Repository</a></strong>
+                </div>
+
+                <p>Contact us on:</p>
+                <div style="padding: 10px; margin-bottom: 20px; display: flex; align-items: center;">
+                  <i class="fa fa-envelope fa-2x text-blue-900"></i>
+                  <strong><a href="mailto:witshpc@gmail.com" target="_blank"
+                      style="text-decoration: none; padding-left: 8px;">witshpc@gmail.com</a></strong>
+                </div>
+
+                <p>Explore our published works:</p>
+                <div class="border p-4 shadow-lg rounded-lg bg-white mt-4">
+                  <h3 class="text-lg font-semibold" style="margin-top: 0em;">Second Life: Enabling a Student Special
+                    Interest Group through Decommissioned HPC Systems</h3>
+                  <p class="text-gray-700 mb-4">
+                    Michael Beukman, Sayfullah Jumoorty, Jonathan Luke Faller, Eugene de Beste, and Bryan Johnston
+                    present insights on leveraging decommissioned HPC systems to empower student engagement in HPC
+                    research and competitions.
+                  </p>
+                  <a href="https://dl.acm.org/doi/fullHtml/10.1145/3626203.3670573"
+                    class="text-white bg-blue-800 px-4 py-2 rounded-lg shadow hover:bg-blue-900" target="_blank"
+                    style="text-decoration: none; color: white;">
+                    Read More
+                  </a>
+                </div>
+
+                <div class="border p-4 shadow-lg rounded-lg bg-white mt-4">
+                  <h3 class="text-lg font-semibold" style="margin-top: 0em;">From Student SIG to Success: The Journey
+                    of a Student HPC Special Interest Group</h3>
+                  <p class="text-gray-700 mb-4">
+                    Bryan Johnston, Lara Timm, David Macleod, John Poole, Lily de Melo, Sayfullah Jumoorty, Jonathan
+                    Faller, Reinhard Jansen van Vuuren, and Michael Beukman discuss the evolution of a student HPC
+                    special interest group and its impact on training and competition success.
+                  </p>
+                  <a href="https://jocse.org/articles/16/1/9/"
+                    class="text-white bg-blue-800 px-4 py-2 rounded-lg shadow hover:bg-blue-900" target="_blank"
+                    style="text-decoration: none; color: white;">
+                    Read More
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="w-full max-w-screen-xl mx-auto mb-6">
+    <div class="px-6">
+      <div class="w-full sm:max-w-2xl max-w-3xl mx-auto">
+        <div class="prose copyright">© Wits-HPC</div>
+        <div class="prose">
+          Designed by
+          <a href="https://www.talhahpatelia.com" title="Talhah Patelia">Talhah Patelia</a>
+          and
+          <a href="https://www.linkedin.com/in/lily-de-melo-180a05257/" title="Lily de Melo">Lily de Melo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
+

@@ -2,125 +2,59 @@
 <html class="bg-white antialiased">
 
 <head>
-  <meta name="generator" content="Hugo 0.145.0">
-  <script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-  <title>WITS HPC ASC25</title>
-
+  <title>WITS HPC @ ASC</title>
 
   <link rel="shortcut icon" href="images/favicon.ico" />
 
-
-  <meta name="description" content="You don&#39;t even know what we can do for you!" />
-
-
-  <meta name="keywords" content="some, keywords, for, seo, you, know, google, duckduckgo, and, such" />
+  <meta name="description" content="Wits HPC at the ASC Student Supercomputer Challenge — Africa's trailblazers in international HPC competition." />
+  <meta name="keywords" content="Wits HPC, ASC, supercomputing, HPC, South Africa, student cluster competition" />
   <link href="https://fonts.googleapis.com/css2?family=Ultra&family=Roboto+Mono&display=swap" rel="stylesheet">
-
-
 
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <meta name="viewport" content="width=device-width" />
 
-  <meta property="og:url" content="http://localhost:1313/">
-  <meta property="og:site_name" content="WITS HPC ASC25">
-  <meta property="og:title" content="WITS HPC ASC25">
-  <meta property="og:description"
-    content="Who is Wits HPC? Wits HPC is a special interest group based at the University of the Witwatersrand in Johannesburg, South Africa, dedicated to educating students on the fundamentals of High-Performance Computing (HPC) and fostering a community of future HPC experts.
-We bridge the gap between theory and practice, equipping students with real-world HPC experience. Through weekly talks, hands-on hackathons, and technical training sessions, we prepare students for competitive rounds hosted by the Centre for High-Performance Computing (CHPC) and have recently expanded into international competitions.">
+  <meta property="og:site_name" content="WITS HPC @ ASC">
+  <meta property="og:title" content="WITS HPC @ ASC">
+  <meta property="og:description" content="Wits HPC at the ASC Student Supercomputer Challenge — Africa's trailblazers in international HPC competition.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://localhost:1313/images/share-image.png">
-
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/images/share-image.png">
-  <meta name="twitter:title" content="WITS HPC ASC25">
-  <meta name="twitter:description"
-    content="Who is Wits HPC? Wits HPC is a special interest group based at the University of the Witwatersrand in Johannesburg, South Africa, dedicated to educating students on the fundamentals of High-Performance Computing (HPC) and fostering a community of future HPC experts.
-We bridge the gap between theory and practice, equipping students with real-world HPC experience. Through weekly talks, hands-on hackathons, and technical training sessions, we prepare students for competitive rounds hosted by the Centre for High-Performance Computing (CHPC) and have recently expanded into international competitions.">
-
-
-  <meta itemprop="name" content="WITS HPC ASC25">
-  <meta itemprop="description"
-    content="Who is Wits HPC? Wits HPC is a special interest group based at the University of the Witwatersrand in Johannesburg, South Africa, dedicated to educating students on the fundamentals of High-Performance Computing (HPC) and fostering a community of future HPC experts.
-We bridge the gap between theory and practice, equipping students with real-world HPC experience. Through weekly talks, hands-on hackathons, and technical training sessions, we prepare students for competitive rounds hosted by the Centre for High-Performance Computing (CHPC) and have recently expanded into international competitions.">
-  <meta itemprop="wordCount" content="454">
-  <meta itemprop="image" content="http://localhost:1313/images/share-image.png">
-
-
 
   <link href="main.css" rel="stylesheet" />
-
 </head>
-
-<script>
-  function startCountdown() {
-    const targetDate = new Date("April 30, 2025 00:00:00").getTime();
-    const countdownElement = document.getElementById("countdown");
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const timeLeft = targetDate - now;
-
-      if (timeLeft <= 0) {
-        countdownElement.innerHTML = "Time's up!";
-        return;
-      }
-
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-      setTimeout(updateCountdown, 1000);
-    }
-
-    updateCountdown();
-  }
-
-  document.addEventListener("DOMContentLoaded", startCountdown);
-</script>
 
 <body>
   <div class="sidebar-toggle" id="sidebar-toggle">
-    <i class="fa fa-bars"></i> <!-- Example: Hamburger Icon -->
+    <i class="fa fa-bars"></i>
   </div>
 
-  <!-- Sidebar (Initially hidden) -->
   <div class="sidebar">
     <div class="sidebar-content">
       <a href="#who-is-wits-hpc">Who is Wits HPC?</a>
       <a href="#what-is-asc">What is ASC?</a>
-      <a href="#meet-the-team">Meet the Team</a>
-      <a href="#the-journey">The Journey</a>
-      <a href="#why-sponsor-us">Why Sponsor Us?</a>
-      <a href="#backabuddy">Backabuddy</a>
+      <a href="#wits-at-asc">Wits at ASC</a>
+      <a href="#our-legacy">Our Legacy</a>
+      <a href="#past-teams">Past Teams</a>
       <a href="#social-media">See More</a>
     </div>
   </div>
 
   <script>
-    // Get all the sidebar links and sidebar toggle button
     const sidebarLinks = document.querySelectorAll('.sidebar-content a');
     const sidebar = document.querySelector('.sidebar');
     const sidebarToggle = document.querySelector('.sidebar-toggle');
 
-    // Function to toggle the sidebar open/close
     sidebarToggle.addEventListener('click', () => {
       sidebar.classList.toggle('open');
     });
 
-    // Close sidebar when a link is clicked
     sidebarLinks.forEach(link => {
       link.addEventListener('click', () => {
         sidebar.classList.remove('open');
       });
     });
-
   </script>
 
   <header id="header" class="bg-cover bg-center bg-no-repeat pb-20"
@@ -129,7 +63,6 @@ We bridge the gap between theory and practice, equipping students with real-worl
     <div class="w-full max-w-screen-xl relative mx-auto px-6 pt-20 pb-10 md:pb-24">
 
       <div class="text-center sm:max-w-2xl max-w-3xl mx-auto text-white">
-        <!-- Heading Section -->
         <div class="mb-10 text-3xl">
           <h1 id="brand-headline"
             class="leading-tight text-5xl text-white font-bold tracking-tight sm:text-4xl sm:leading-tight md:text-7xl md:leading-tight font-ultra">
@@ -137,44 +70,23 @@ We bridge the gap between theory and practice, equipping students with real-worl
           </h1>
           <h1 id="brand-headline"
             class="leading-tight text-5xl text-white font-bold tracking-tight sm:text-4xl sm:leading-tight md:text-7xl md:leading-tight font-ultra">
-            @ ASC25
+            @ ASC
           </h1>
         </div>
+        <p class="text-xl text-white opacity-90 mb-8">Africa's trailblazers at the world's largest supercomputing competition</p>
       </div>
 
-      <!-- Countdown Timer Section -->
-      <div class="text-center sm:max-w-2xl max-w-3xl mx-auto text-white">
-        <div class="flex justify-center mb-10">
-          <div
-            class="m-1 p-4 w-96 rounded-2xl custom-shadow border border-gray-600 text-center bg-white bg-opacity-90 text-black">
-
-            <!-- Label for Countdown -->
-            <p class="text-lg mb-2"><i>Days till departure:</i></p> <!-- Added label -->
-
-            <!-- Countdown Timer -->
-            <div id="countdown" class="text-3xl font-bold"></div>
-
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Button Section -->
       <div class="flex flex-col sm:flex-row mt-12 justify-center sm:space-x-8 mb-10">
         <div class="mb-6 sm:mb-0 flex justify-center w-full gap-4">
           <a class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-800 hover:bg-blue-900 md:text-lg md:leading-tight text-white font-semibold leading-tight custom-shadow text-center"
-            href="https://www.backabuddy.co.za/campaign/wits-hpc-asc25" id="button-cta" target="_blank">
-            Back-A-Buddy
+            href="past-teams/index.html">
+            Past Teams
           </a>
-          <a class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-800 hover:bg-blue-900 md:text-lg md:leading-tight text-white font-semibold leading-tight custom-shadow text-center"
-            href="/hall-of-fame/index.html" id="button-cta">
+	  <a class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-800 hover:bg-blue-900 md:text-lg md:leading-tight text-white font-semibold leading-tight custom-shadow text-center"
+            href="hall-of-fame/index.html">
             Hall of Fame
           </a>
-          <a class="button button-primary rounded-lg text-2xl md:text-3xl px-4 md:px-5 py-3 md:py-4 bg-blue-800 hover:bg-blue-900 md:text-lg md:leading-tight text-white font-semibold leading-tight custom-shadow text-center"
-            href="/asc-recap/index.html" id="button-cta">
-            ASC25 Recap
-          </a>
-        </div>
+	</div>
       </div>
     </div>
   </header>
@@ -186,383 +98,223 @@ We bridge the gap between theory and practice, equipping students with real-worl
           <div class="flex">
             <div class="pb-16 w-full pt-12">
               <div class="homepage-content prose w-full max-w-3xl mx-auto mb-6">
+
+                <!-- WHO IS WITS HPC -->
                 <h1 id="who-is-wits-hpc">Who is Wits HPC?</h1>
 
                 <p class="mb-6">
-                  <b>Wits HPC</b> is a special interest group based at the <b>University of the Witwatersrand
-                  </b> in <b>Johannesburg,
-                    South Africa</b>,
-                  dedicated to educating students on the fundamentals of High-Performance Computing (HPC) and fostering
-                  a
-                  community of future HPC experts.
+                  <b>Wits HPC</b> is a special interest group based at the <b>University of the Witwatersrand</b> in
+                  <b>Johannesburg, South Africa</b>, dedicated to educating students on the fundamentals of
+                  High-Performance Computing (HPC) and fostering a community of future HPC experts.
                 </p>
 
                 <div style="text-align: center;">
-                  <img src="images/great_hall.jpg" class="w-full h-autoS shadow-lg rounded-lg">
-                  <p style=" font-style: italic; margin-top: -1.75em; margin-bottom: 0em;">The Great Hall at Wits
-                    University</p>
+                  <img src="images/great_hall.jpg" class="w-full h-auto shadow-lg rounded-lg">
+                  <p style="font-style: italic; margin-top: -1.75em; margin-bottom: 0em;">The Great Hall at Wits University</p>
                 </div>
-
 
                 <p class="mb-6">
                   We bridge the gap between theory and practice, equipping students with real-world HPC experience.
-                  Through weekly
-                  talks, hands-on hackathons, and technical training sessions, we prepare students for competitive
-                  rounds hosted by
-                  the <b>Centre for High-Performance Computing (CHPC)</b> and have recently expanded into international
-                  competitions.
+                  Through weekly talks, hands-on hackathons, and technical training sessions, we prepare students for
+                  competitive rounds hosted by the <b>Centre for High-Performance Computing (CHPC)</b> and have expanded
+                  into international competitions at the highest level.
                 </p>
 
                 <div class="flex items-center justify-center space-x-6 mb-6">
-                  <!-- Left Image -->
-                  <img src="images/talks_1.jpg" alt="Left Image" class="w-1/2 h-auto object-cover shadow-lg rounded-lg">
-
-                  <!-- Right Image -->
-                  <img src="images/talks_2.jpg" alt="Right Image"
-                    class="w-1/2 h-auto object-cover shadow-lg rounded-lg">
-
+                  <img src="images/talks_1.jpg" alt="HPC Talk" class="w-1/2 h-auto object-cover shadow-lg rounded-lg">
+                  <img src="images/talks_2.jpg" alt="HPC Talk" class="w-1/2 h-auto object-cover shadow-lg rounded-lg">
                 </div>
-                <p style="text-align: center; font-style: italic; margin-top: -3em; margin-bottom: 0em;">Talks
-                  conducted at Wits University</p>
+                <p style="text-align: center; font-style: italic; margin-top: -3em; margin-bottom: 0em;">Talks conducted at Wits University</p>
 
                 <p class="mb-6">
                   At our core, we are a passionate group of engineering and computer science students working alongside
-                  lecturers
-                  to provide learning opportunities beyond the traditional curriculum. Whether mentoring, researching,
-                  competing,
-                  or innovating, Wits HPC is committed to pushing the boundaries of HPC education and excellence.
+                  lecturers to provide learning opportunities beyond the traditional curriculum. Whether mentoring,
+                  researching, competing, or innovating, Wits HPC is committed to pushing the boundaries of HPC
+                  education and excellence.
                 </p>
 
                 <hr>
-                <h1 id="what-is-asc">What is ASC?</h1>
-                <p>The world&rsquo;s largest supercomputing competition, the <b>Asia Supercomputer Community (ASC)
-                    Student
-                    Supercomputer Challenge</b>, was proposed, and is organised by China (in cooperation with experts
-                  and
-                  institutions from Japan, Russa, South Korea, Singapore, Taiwan, Hong Kong, and others). It began in
-                  2012, with 27 universities, and has grown quickly since. Up until this year, a cumulative 10 000+
-                  undergraduate students from 350+ universities have taken part.</p>
-                <p>The competition itself puts students in
-                  a position to tackle industry standard benchmarks, such as <a
-                    href="https://www.netlib.org/benchmark/hpl/">HPL</a> and <a
-                    href="https://hpcg-benchmark.org/">HPCG</a>, as well as optimise cutting edge scientific
-                  applications. This year, <a href="https://deepmind.google/technologies/alphafold/">Google
-                    Deepminds&rsquo;s Alphafold3</a> <a
-                    href="https://www.nobelprize.org/prizes/chemistry/2024/press-release/">(Nobel Prize 2024)</a>
-                  inference optimisation, <a href="https://www.deepseek.com/">Deepseek-AI&rsquo;s Deepseek R1</a>
-                  inference optimisation, Cern&rsquo;s <a href="https://geant4.web.cern.ch/">Geant4</a>, and the
-                  development of a RNA m5C site detection pipeline are on the table!</p>
-                <p>The competition consists of 2 stages; the preliminary stage (which is online, from each team&rsquo;s
-                  respective home university), and the final round. Wits HPC is proud to say we were among the top 25
-                  teams in this stage, and have qualified to advance to the final round, which is hosted in <b>Xining,
-                    China</b>, this
-                  year, at <b>Qinghai University</b>.</p>
 
-                <div class="border p-4 shadow-lg rounded-lg bg-white max-w-2xl mx-auto mt-0">
-                  <h2 class="text-xl font-bold" style="margin-top: 0em; ">ASC24 Student Cluster Competition: Who Won and
-                    Why?</h2>
+                <!-- WHAT IS ASC -->
+                <h1 id="what-is-asc">What is ASC?</h1>
+
+                <p>The world's largest supercomputing competition, the <b>Asia Supercomputer Community (ASC) Student
+                    Supercomputer Challenge</b>, was proposed and is organised by China in cooperation with experts and
+                  institutions from Japan, Russia, South Korea, Singapore, Taiwan, Hong Kong, and others. It began in
+                  2012 with 27 universities and has grown rapidly since. To date, a cumulative 10,000+ undergraduate
+                  students from 350+ universities worldwide have taken part.</p>
+
+                <p>The competition puts students in a position to tackle industry-standard benchmarks such as
+                  <a href="https://www.netlib.org/benchmark/hpl/">HPL</a> and
+                  <a href="https://hpcg-benchmark.org/">HPCG</a>, as well as optimise cutting-edge scientific
+                  applications — from protein folding to particle physics simulations. Teams compete across two stages:
+                  an online preliminary round at their home universities, followed by an in-person final held in China.
+                </p>
+
+                <div class="border p-4 shadow-lg rounded-lg bg-white max-w-2xl mx-auto mt-4 mb-6">
+                  <h2 class="text-xl font-bold" style="margin-top: 0em;">ASC24 Student Cluster Competition: Who Won and Why?</h2>
                   <img src="https://www.hpcwire.com/wp-content/uploads/2024/06/Peking-win-1-x650s.png"
                     alt="ASC24 Winners" class="w-full h-auto mb-4 rounded-lg shadow">
                   <p class="text-gray-700 mb-4">
-                    HPCwire covers the latest results of the ASC24 Student Cluster Competition, highlighting the winners
-                    and key insights.
+                    HPCwire covers the results of the ASC24 Student Cluster Competition, highlighting the winners and key insights.
                   </p>
                   <a href="https://www.hpcwire.com/2024/06/18/asc24-student-cluster-competition-who-won-and-why/"
                     class="text-white bg-blue-800 px-4 py-2 rounded-lg shadow hover:bg-blue-900" target="_blank"
-                    style="text-decoration: none;color: white;">
+                    style="text-decoration: none; color: white;">
                     Read More
                   </a>
                 </div>
 
-
                 <hr>
-                <h1 id="meet-the-team">Meet the Team</h1>
-                <p>From Egoli, the City of Gold, we have Wits HPC, who have earned <a
-                    href="https://www.asc-events.net/StudentChallenge/ASC25/preliminary-result.php">their place among
-                    the
-                    25 finalists of
-                    the ASC</a>, standing out from hundreds of teams worldwide.</p>
-                <p>The team is made up of undergraduate students from the Science and Engineering faculties who have
-                  demonstrated their passion and dedication to HPC through facilitating talks, writing papers, and
-                  engaging in outreach. Most of the team members have competed in other Student Cluster Competitions,
-                  both locally and internationally, and are ready to showcase their skills once again.</p>
 
-                <p>Their advisor, Prof. Ling Cheng, joined Wits University in 2010 and has made significant
-                  contributions
-                  to telecommunications and artificial intelligence. He has supervised over 50 postgraduate students,
-                  including 11 PhDs, and served as an associate editor for three journals. His expertise will be
-                  invaluable in guiding the team through this competition.</p>
+                <!-- WITS AT ASC -->
+                <h1 id="wits-at-asc">Wits HPC at ASC</h1>
+
+                <p>
+                  Wits HPC made history as the <b>first standalone African university</b> to compete at the ASC Student
+                  Supercomputer Challenge. Our journey to ASC is a testament to the dedication, talent, and grit of our
+                  students — competing against hundreds of universities from across the globe.
+                </p>
+
+                <p>
+                  Our debut at ASC25 saw the team qualify among the <b>top 25 finalists</b> from the preliminary round,
+                  earning a spot at the in-person final held at <b>Qinghai University, Xining, China</b> in May 2025.
+                  Competing against universities with far greater resources, the Wits HPC team held their own —
+                  representing South Africa and the African continent on the world's biggest supercomputing stage.
+                </p>
+
                 <div style="text-align: center;">
-                  <img src="images/meet_the_team.jpg" class="w-full h-autoS shadow-lg rounded-lg">
-                  <p style=" font-style: italic; margin-top: -1.75em; margin-bottom: 0em;">From left to right: Lily de
-                    Melo, Sefora Kapenga, Jonathan Faller, Reinhard Jansen van Vuuren, Talhah Patelia, Prof. Ling Cheng
-                  </p>
+                  <img src="images/witsasc25.png" class="w-full h-auto shadow-lg rounded-lg">
+                  <p style="font-style: italic; margin-top: -1.75em; margin-bottom: 0em;">The ASC25 team's journey from South Africa to China</p>
                 </div>
-                <p>The team composition is as follows:
-                <ul>
-                  <li><a href="https://www.wits.ac.za/people/academic-a-z-listing/c/lingchengwitsacza/"><strong>Prof.
-                        Ling Cheng</strong></a> (Advisor)</li>
-                  <li><a href="https://www.linkedin.com/in/talhah-patelia-77250a196/"><strong>Talhah
-                        Patelia</strong></a>, BSc (Eng) Information, YOS 3</li>
-                  <li><a href="https://www.linkedin.com/in/reinhardjvv/"><strong>Reinhard Jansen van
-                        Vuuren</strong></a>, BSc (Eng) Information, YOS 3 (Captain)</li>
-                  <li><a href="https://www.linkedin.com/in/jonathan-faller-2abb191b8/"><strong>Jonathan
-                        Faller</strong></a>, BSc (Eng) Information, YOS 4</li>
-                  <li><a href="https://www.linkedin.com/in/sephora-k/"><strong>Sefora Kapenga</strong></a>, BSc Computer
-                    Science, YOS 3</li>
-                  <li><a href="https://www.linkedin.com/in/lily-de-melo-180a05257/"> <strong>Lily de
-                        Melo</strong></a>,
-                    BSc Computer Science, YOS 3</li>
-                </ul>
 
+                <p>
+                  The ASC competition challenges teams to run industry-standard HPC benchmarks and optimise real
+                  scientific workloads — skills that translate directly into careers in research computing, AI
+                  infrastructure, and data-intensive science. For Wits students, ASC is more than a competition: it is
+                  an accelerated education in world-class HPC practice.
                 </p>
 
                 <hr>
-                <h1 id="the-journey">The Journey</h1>
-                <div style="text-align: center;">
-                  <img src="images/witsasc25.png" class="w-full h-autoS shadow-lg rounded-lg">
-                  <p style=" font-style: italic; margin-top: -1.75em; margin-bottom: 0em;">Travel from South Africa to
-                    China
-                  </p>
-                </div>
-                <p> The team is scheduled to depart on <b>May 7th</b> and will compete from May <b>8th to May 14th</b>
-                  at
-                  <b>Qinghai
-                    University</b>, recognized as one of China’s leading institutions for its state-of-the-art research
-                  in
-                  science and technology. They plan to leave the country on May 18th. The team seeks assistance in
-                  finalizing visas and plane tickets; however, all other expenses will be covered by the ASC Organisers,
-                  including accommodation during the competition, hardware, and meals.
-                </p>
-                <div style="text-align: center;">
-                  <img src="images/qinghai_university.jpg" class="w-full h-autoS shadow-lg rounded-lg">
-                  <p style=" font-style: italic; margin-top: -1.75em; margin-bottom: 0em;">Qinghai University
-                  </p>
-                </div>
 
-                <hr>
-                <h1 id="why-sponsor-us">Why Sponsor Us?</h1>
-                <p>What other reasons do you need, besides our great South African accents and distinct personalities?
-                  On a more serious note, our students have worked tirelessly and shown immense passion in elevating
-                  the HPC student space in South Africa. Sponsoring Wits HPC means supporting the next generation of
-                  HPC industry professionals and investing in future talent.</p>
-                <p>By sponsoring Wits HPC, your company gains visibility and aligns itself with a proven track record of
-                  excellence in HPC & AI education and performance. And we don’t just talk the talk — we walk the walk.
-                  Over the past 10 years, we’ve proven our excellence:</p>
+                <!-- OUR LEGACY -->
+                <h1 id="our-legacy">Our Legacy</h1>
+
+                <p>
+                  Wits HPC's track record in Student Cluster Competitions is one of the strongest in the country —
+                  and increasingly, the continent.
+                </p>
+
                 <ul>
                   <li><strong>7 first-place titles</strong> at the CHPC SCC (South Africa)</li>
                   <li><strong>4 first-place titles</strong> at the ISC SCC (Germany), with 52 out of 88 students
-                    selected
-                    for Team CHPC at ISC being from Wits HPC</li>
-                  <li>The <strong>first standalone African university</strong> to compete at Virtual ISC'25 and ASC'25
-                    (hopefully with your help!)</li>
+                    selected for Team CHPC at ISC coming from Wits HPC</li>
+                  <li>The <strong>first standalone African university</strong> to compete at ASC (ASC25, Xining China)</li>
+                  <li>Participants at <strong>Virtual ISC'25</strong> — continuing our international presence</li>
                 </ul>
 
-
-                <div class="flex items-center justify-center space-x-6 mb-6">
-                  <!-- Left Image -->
-                  <img src="images/chpc_2024.jpg" class="w-1/4 h-auto object-cover shadow-lg rounded-lg">
-
-                  <!-- Right Image -->
-                  <img src="images/isc_2016.jpg" class="w-1/4 h-auto object-cover shadow-lg rounded-lg">
-
-                  <!-- Right Image -->
-                  <img src="images/isc_year.webp" class="w-1/4 h-auto object-cover shadow-lg rounded-lg">
+                <div class="flex items-center justify-center space-x-6 mb-6 mt-4">
+                  <img src="images/chpc_2024.jpg" class="w-1/3 h-auto object-cover shadow-lg rounded-lg">
+                  <img src="images/isc_2016.jpg" class="w-1/3 h-auto object-cover shadow-lg rounded-lg">
+                  <img src="images/isc_year.webp" class="w-1/3 h-auto object-cover shadow-lg rounded-lg">
                 </div>
-                <p style="text-align: center; font-style: italic; margin-top: -3em; margin-bottom: 0em;">Wits
-                  University's Success at Local and International Student Cluster Competitions</p>
-
-                <p>In return for your support, we’re eager to share our experience with you:
-                <table class="w-full border-collapse border border-gray-500 rounded-lg overflow-hidden">
-                  <thead>
-                    <tr class="bg-blue-900">
-                      <th class="text-white border border-gray-500 px-6 py-3 text-center rounded-tl-lg">
-                        Donation Amount
-                      </th>
-                      <th class="text-white border border-gray-500 px-4 py-3 text-left rounded-tr-lg">
-                        Sharing Our Experience with You<sup>*</sup>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- Corporate Tier -->
-                    <tr class="bg-gray-300">
-                      <td colspan="2" class="text-center font-bold py-2">Corporate</td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R30,000 ($1,600)</td>
-                      <td class="border border-gray-500 px-4 py-4">
-                        <ul class="pl-5">
-                          <li>A personalized stamp featuring your name in traditional calligraphy and send it your way.
-                          </li>
-                          <li>Includes all experiences from below as well</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R20,000 ($1,070)</td>
-                      <td class="border border-gray-500 px-4 py-4">
-                        <ul class="pl-5">
-                          <li>A Red Book, purchased in China, with a handwritten message from our team - mailed directly
-                            to you.</li>
-                          <li>Includes all experiences from below as well</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R15,000 ($800)</td>
-                      <td class="border border-gray-500 px-4 py-4">
-                        <ul class="pl-5">
-                          <li>Proudly display your logo or name on our Wits HPC team hoodies.</li>
-                          <li>Your Your logo or name proudly featured on our official website.</li>
-                          <li>Includes all experiences from below as well</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R10,000 ($530)</td>
-                      <td class="border border-gray-500 px-4 py-4">
-                        <ul class="pl-5">
-                          <li>A custom-made shoutout video from us at ASC in China.</li>
-                          <li>Includes all experiences from below as well</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R5,000 ($270)</td>
-                      <td class="border border-gray-500 px-4 py-4">
-                        <ul class="pl-5">
-                          <li>A fun team photo with your name or company featured at ASC in China - posted on our
-                            socials.
-                          </li>
-                          <li>Includes all experiences from below as well</li>
-                        </ul>
-                      </td>
-                    </tr>
-
-                    <!-- Enthusiast Tier -->
-                    <tr class="bg-gray-300">
-                      <td colspan="2" class="text-center font-bold py-2">Enthusiast</td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R3,000 ($160)</td>
-                      <td class="border border-gray-500 px-4 py-4">
-                        <ul class="pl-5">
-                          <li>A postcard-style digital image of us at the Great Wall with your name on it - sent to you
-                            directly.
-                          </li>
-                          <li>Includes all experiences from below as well</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R2,000 ($110)</td>
-                      <td class="border border-gray-500 px-4 py-4">
-                        <ul class="pl-5">
-                          <li>Exclusive access to our newsletter - featuring behind-the-scenes content and early
-                            previews of our work.
-                          </li>
-                          <li>Includes all experiences from below as well</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">R1,000 ($55)</td>
-                      <td class="border border-gray-500 px-4 py-4">
-                        <ul class="pl-5">
-                          <li>Your name proudly displayed on our Hall of Fame canvas in the Wits HPC hardware room.
-                          </li>
-                          <li>Includes all experiences from below as well</li>
-                        </ul>
-                      </td>
-                    </tr>
-
-                    <!-- Casual Tier -->
-                    <tr class="bg-gray-300">
-                      <td colspan="2" class="text-center font-bold py-2">Casual</td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">Under R1,000 (Under $55)</td>
-                      <td class="border border-gray-500 px-4 py-4">
-                        <ul class="pl-5">
-                          <li>Your name proudly displayed on our digital Hall of Fame on the Wits HPC website.
-                          </li>
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <p>And for our top donors we have something:</p>
-
-                <table class="w-full border-collapse border border-gray-500 rounded-lg overflow-hidden mt-6">
-                  <colgroup>
-                    <col style="width: 40%;">
-                    <col style="width: 60%;">
-                  </colgroup>
-                  <thead>
-                    <tr class="bg-blue-900">
-                      <th class="text-white border border-gray-500 px-6 py-3 text-center rounded-tl-lg">
-                        Top Donor Rank
-                      </th>
-                      <th class="text-white border border-gray-500 px-6 py-3 text-left rounded-tr-lg">
-                        Sharing Our Experience with You<sup>*</sup>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">Top Donor</td>
-                      <td class="border border-gray-500 px-6 py-4">Naming Rights for Cluster</td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">2nd Highest Donor</td>
-                      <td class="border border-gray-500 px-6 py-4">Naming Rights for two nodes</td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">3rd Highest Donor</td>
-                      <td class="border border-gray-500 px-6 py-4">Naming Rights for one node</td>
-                    </tr>
-                    <tr>
-                      <td class="border border-gray-500 px-6 py-4 font-bold text-center">4th Highest Donor</td>
-                      <td class="border border-gray-500 px-6 py-4">Naming Rights for one node</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p><sup>*</sup><i>All perks depend on us being able to make it to ASC. If that doesn’t happen, we’ll do
-                    our best to
-                    refund as much of your donation as we can — though it might not be the full amount.</i></p>
-                </o>
-
+                <p style="text-align: center; font-style: italic; margin-top: -3em; margin-bottom: 0em;">
+                  Wits HPC's success at CHPC and ISC Student Cluster Competitions
                 </p>
-                <hr>
-                <h1 id="backabuddy">BackaBuddy</h1>
-                <p>The team will be raising funds through BackaBuddy, a crowdfunding platform based in Africa. Upon
-                  completion, the payments will be managed by an attorney on a pro bono basis. We are committed to
-                  transparency, if we don’t reach our funding goal or are unable to attend ASC, we will do our best to
-                  refund as much of your donation as possible - though it might not be the full amount.</p>
 
-                <iframe src="https://www.backabuddy.co.za/campaign/wits-hpc-asc25" width="100%" height="700"
-                  style="border: none;"></iframe>
+                <p class="mt-6">
+                  Our published research further reflects the group's commitment to advancing HPC education:
+                </p>
+
+                <div class="border p-4 shadow-lg rounded-lg bg-white mt-4">
+                  <h3 class="text-lg font-semibold" style="margin-top: 0em;">Second Life: Enabling a Student Special Interest Group through Decommissioned HPC Systems</h3>
+                  <p class="text-gray-700 mb-4">
+                    Michael Beukman, Sayfullah Jumoorty, Jonathan Luke Faller, Eugene de Beste, and Bryan Johnston
+                    present insights on leveraging decommissioned HPC systems to empower student engagement in HPC
+                    research and competitions.
+                  </p>
+                  <a href="https://dl.acm.org/doi/fullHtml/10.1145/3626203.3670573"
+                    class="text-white bg-blue-800 px-4 py-2 rounded-lg shadow hover:bg-blue-900" target="_blank"
+                    style="text-decoration: none; color: white;">
+                    Read More
+                  </a>
+                </div>
+
+                <div class="border p-4 shadow-lg rounded-lg bg-white mt-4">
+                  <h3 class="text-lg font-semibold" style="margin-top: 0em;">From Student SIG to Success: The Journey of a Student HPC Special Interest Group</h3>
+                  <p class="text-gray-700 mb-4">
+                    Bryan Johnston, Lara Timm, David Macleod, John Poole, Lily de Melo, Sayfullah Jumoorty, Jonathan
+                    Faller, Reinhard Jansen van Vuuren, and Michael Beukman discuss the evolution of a student HPC
+                    special interest group and its impact on training and competition success.
+                  </p>
+                  <a href="https://jocse.org/articles/16/1/9/"
+                    class="text-white bg-blue-800 px-4 py-2 rounded-lg shadow hover:bg-blue-900" target="_blank"
+                    style="text-decoration: none; color: white;">
+                    Read More
+                  </a>
+                </div>
+
                 <hr>
+
+                <!-- PAST TEAMS -->
+                <h1 id="past-teams">Past Teams</h1>
+
+                <p>
+                  Every year, a new generation of Wits students rises to the challenge. Browse the teams that have
+                  represented Wits HPC at ASC.
+                </p>
+
+                <!-- ASC25 Card -->
+                <div class="border p-6 shadow-lg rounded-lg bg-white mt-4 flex flex-col sm:flex-row items-center gap-6">
+                  <img src="images/meet_the_team.jpg" alt="ASC25 Team" class="w-full sm:w-48 h-auto rounded-lg shadow object-cover">
+                  <div>
+                    <h2 class="text-xl font-bold" style="margin-top: 0em;">ASC25 — Xining, China</h2>
+                    <p class="text-gray-700 mb-3">
+                      The inaugural Wits ASC team. Six students and their advisor made history as the first standalone
+                      African university to compete at ASC, qualifying in the top 25 globally from the preliminary round.
+                    </p>
+                    <p class="text-gray-600 text-sm mb-4">
+                      <strong>Members:</strong> Talhah Patelia, Reinhard Jansen van Vuuren (Captain), Jonathan Faller,
+                      Sefora Kapenga, Lily de Melo &bull; <strong>Advisor:</strong> Prof. Ling Cheng
+                    </p>
+                    <a href="past-teams/index.html"
+                      class="text-white bg-blue-800 px-4 py-2 rounded-lg shadow hover:bg-blue-900"
+                      style="text-decoration: none; color: white;">
+                      View ASC25 Page
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Placeholder for future teams - easy to copy & extend -->
+                <!-- 
+                <div class="border p-6 shadow-lg rounded-lg bg-white mt-4 flex flex-col sm:flex-row items-center gap-6">
+                  <div>
+                    <h2 class="text-xl font-bold" style="margin-top: 0em;">ASC26 — [City], China</h2>
+                    <p class="text-gray-700 mb-4">...</p>
+                    <a href="past-teams/asc26/index.html" ...>View ASC26 Page</a>
+                  </div>
+                </div>
+                -->
+
+                <hr>
+
+                <!-- SOCIAL MEDIA -->
                 <h1 id="social-media">See More</h1>
 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
                 <p>Follow our journey on social media:</p>
-                <div style="padding: 10px; jsutify-content: left;">
+                <div style="padding: 10px;">
                   <div style="margin-bottom: 20px; display: flex; align-items: center;">
                     <i class="fa-brands fa-linkedin fa-2x text-blue-900"></i>
                     <strong><a href="https://www.linkedin.com/company/wits-hpc-interest-group/" target="_blank"
                         style="text-decoration: none; padding-left: 8px;">Wits HPC Interest Group</a></strong>
                   </div>
-
                   <div style="margin-bottom: 20px; display: flex; align-items: center;">
                     <i class="fa-brands fa-instagram fa-2x text-blue-900"></i>
                     <strong><a href="https://www.instagram.com/witshpc?igsh=MWE0ZnZpbnhwazcyMw==" target="_blank"
                         style="text-decoration: none; padding-left: 8px;">@witshpc</a></strong>
                   </div>
-
                   <div style="margin-bottom: 20px; display: flex; align-items: center;">
                     <i class="fa-solid fa-globe fa-2x text-blue-900"></i>
                     <strong><a href="https://witshpc.com/" target="_blank"
@@ -581,39 +333,7 @@ We bridge the gap between theory and practice, equipping students with real-worl
                 <div style="padding: 10px; margin-bottom: 20px; display: flex; align-items: center;">
                   <i class="fa fa-envelope fa-2x text-blue-900"></i>
                   <strong><a href="mailto:witshpc@gmail.com" target="_blank"
-                      style="text-decoration: none; padding-left: 8px;">witshpc@gmail</a></strong>
-                </div>
-
-
-                <p>Explore our published works:</p>
-                <div class="border p-4 shadow-lg rounded-lg bg-white mt-4">
-                  <h3 class="text-lg font-semibold" style="margin-top: 0em; ">Second Life: Enabling a Student Special
-                    Interest Group through Decommissioned HPC Systems</h3>
-                  <p class="text-gray-700 mb-4">
-                    Michael Beukman, Sayfullah Jumoorty, Jonathan Luke Faller, Eugene de Beste, and Bryan Johnston
-                    present insights on leveraging decommissioned HPC systems to empower student engagement in HPC
-                    research and competitions.
-                  </p>
-                  <a href="https://dl.acm.org/doi/fullHtml/10.1145/3626203.3670573"
-                    class="text-white bg-blue-800 px-4 py-2 rounded-lg shadow hover:bg-blue-900" target="_blank"
-                    style="text-decoration: none; color: white;">
-                    Read More
-                  </a>
-                </div>
-
-                <div class="border p-4 shadow-lg rounded-lg bg-white mt-4">
-                  <h3 class="text-lg font-semibold" style="margin-top: 0em; ">From Student SIG to Success: The Journey
-                    of a Student HPC Special Interest Group</h3>
-                  <p class="text-gray-700 mb-4">
-                    Bryan Johnston, Lara Timm, David Macleod, John Poole, Lily de Melo, Sayfullah Jumoorty, Jonathan
-                    Faller, Reinhard Jansen van Vuuren, and Michael Beukman discuss the evolution of a student HPC
-                    special interest group and its impact on training and competition success.
-                  </p>
-                  <a href="https://jocse.org/articles/16/1/9/"
-                    class="text-white bg-blue-800 px-4 py-2 rounded-lg shadow hover:bg-blue-900" target="_blank"
-                    style="text-decoration: none; color: white;">
-                    Read More
-                  </a>
+                      style="text-decoration: none; padding-left: 8px;">witshpc@gmail.com</a></strong>
                 </div>
 
               </div>
@@ -623,6 +343,7 @@ We bridge the gap between theory and practice, equipping students with real-worl
       </div>
     </div>
   </main>
+
   <footer id="footer" class="w-full max-w-screen-xl mx-auto mb-6">
     <div class="px-6">
       <div class="w-full sm:max-w-2xl max-w-3xl mx-auto">
@@ -633,10 +354,10 @@ We bridge the gap between theory and practice, equipping students with real-worl
           and
           <a href="https://www.linkedin.com/in/lily-de-melo-180a05257/" title="Lily de Melo">Lily de Melo</a>
         </div>
-
       </div>
     </div>
   </footer>
 </body>
 
 </html>
+
